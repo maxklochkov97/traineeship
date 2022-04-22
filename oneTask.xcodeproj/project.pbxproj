@@ -7,24 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F180CB928106BED00131ABA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F180CB828106BED00131ABA /* SceneDelegate.swift */; };
+		5F180CBF28106D2D00131ABA /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F180CBE28106D2D00131ABA /* CollectionView.swift */; };
+		5F2BAAA228097A6900668047 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2BAAA128097A6900668047 /* CollectionViewCell.swift */; };
+		5F2BAAA428098D1000668047 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2BAAA328098D1000668047 /* Page.swift */; };
+		5F2BAAA62809910300668047 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2BAAA52809910300668047 /* HeaderCollectionReusableView.swift */; };
 		5F2F826F27E305490067C0E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F826E27E305490067C0E5 /* AppDelegate.swift */; };
-		5F2F827127E305490067C0E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F827027E305490067C0E5 /* SceneDelegate.swift */; };
 		5F2F827327E305490067C0E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F827227E305490067C0E5 /* ViewController.swift */; };
 		5F2F827627E305490067C0E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2F827427E305490067C0E5 /* Main.storyboard */; };
 		5F2F827827E3054B0067C0E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F2F827727E3054B0067C0E5 /* Assets.xcassets */; };
 		5F2F827B27E3054B0067C0E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2F827927E3054B0067C0E5 /* LaunchScreen.storyboard */; };
+		5F9733D52809F1650034495A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9733D42809F1650034495A /* TabBarController.swift */; };
+		5FCB5B3E2810579000DD17B5 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCB5B3D2810579000DD17B5 /* Extension+UIColor.swift */; };
+		5FCB5B42281059CD00DD17B5 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCB5B41281059CD00DD17B5 /* Extension+UIView.swift */; };
 		FD66D01DD78C6D8855E7FA3F /* Pods_oneTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE0824AA98BED718D9F92FF /* Pods_oneTask.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F180CB828106BED00131ABA /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5F180CBE28106D2D00131ABA /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		5F2BAAA128097A6900668047 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		5F2BAAA328098D1000668047 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		5F2BAAA52809910300668047 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		5F2F826B27E305490067C0E5 /* oneTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = oneTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F2F826E27E305490067C0E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5F2F827027E305490067C0E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5F2F827227E305490067C0E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5F2F827527E305490067C0E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5F2F827727E3054B0067C0E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F2F827A27E3054B0067C0E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F2F827C27E3054B0067C0E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F9733D42809F1650034495A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		5FCB5B3D2810579000DD17B5 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
+		5FCB5B41281059CD00DD17B5 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		6D7BE05BE149E6F648E0FA31 /* Pods-oneTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-oneTask.release.xcconfig"; path = "Target Support Files/Pods-oneTask/Pods-oneTask.release.xcconfig"; sourceTree = "<group>"; };
 		8D642991776C30B2C5DD411E /* Pods-oneTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-oneTask.debug.xcconfig"; path = "Target Support Files/Pods-oneTask/Pods-oneTask.debug.xcconfig"; sourceTree = "<group>"; };
 		CCE0824AA98BED718D9F92FF /* Pods_oneTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_oneTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,7 +62,6 @@
 				8D642991776C30B2C5DD411E /* Pods-oneTask.debug.xcconfig */,
 				6D7BE05BE149E6F648E0FA31 /* Pods-oneTask.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -73,15 +86,46 @@
 		5F2F826D27E305490067C0E5 /* oneTask */ = {
 			isa = PBXGroup;
 			children = (
+				5F180CB828106BED00131ABA /* SceneDelegate.swift */,
+				5FCB5B402810580400DD17B5 /* Cell */,
+				5FCB5B3F281057BD00DD17B5 /* Controllers */,
+				5FCB5B3C2810577000DD17B5 /* Extensions */,
 				5F2F826E27E305490067C0E5 /* AppDelegate.swift */,
-				5F2F827027E305490067C0E5 /* SceneDelegate.swift */,
-				5F2F827227E305490067C0E5 /* ViewController.swift */,
 				5F2F827427E305490067C0E5 /* Main.storyboard */,
 				5F2F827727E3054B0067C0E5 /* Assets.xcassets */,
 				5F2F827927E3054B0067C0E5 /* LaunchScreen.storyboard */,
 				5F2F827C27E3054B0067C0E5 /* Info.plist */,
 			);
 			path = oneTask;
+			sourceTree = "<group>";
+		};
+		5FCB5B3C2810577000DD17B5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5FCB5B3D2810579000DD17B5 /* Extension+UIColor.swift */,
+				5FCB5B41281059CD00DD17B5 /* Extension+UIView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5FCB5B3F281057BD00DD17B5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5F2F827227E305490067C0E5 /* ViewController.swift */,
+				5F9733D42809F1650034495A /* TabBarController.swift */,
+				5F180CBE28106D2D00131ABA /* CollectionView.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5FCB5B402810580400DD17B5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5F2BAAA52809910300668047 /* HeaderCollectionReusableView.swift */,
+				5F2BAAA328098D1000668047 /* Page.swift */,
+				5F2BAAA128097A6900668047 /* CollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		C8073BF515D7FA274EFE9A0B /* Frameworks */ = {
@@ -99,6 +143,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5F2F827F27E3054B0067C0E5 /* Build configuration list for PBXNativeTarget "oneTask" */;
 			buildPhases = (
+				5FCB5B43281064F200DD17B5 /* Run SwiftLint */,
 				C47EE33A3DF27FEA4A701A6D /* [CP] Check Pods Manifest.lock */,
 				5F2F826727E305490067C0E5 /* Sources */,
 				5F2F826827E305490067C0E5 /* Frameworks */,
@@ -178,6 +223,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-oneTask/Pods-oneTask-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5FCB5B43281064F200DD17B5 /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		C47EE33A3DF27FEA4A701A6D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -207,9 +270,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F180CBF28106D2D00131ABA /* CollectionView.swift in Sources */,
 				5F2F827327E305490067C0E5 /* ViewController.swift in Sources */,
 				5F2F826F27E305490067C0E5 /* AppDelegate.swift in Sources */,
-				5F2F827127E305490067C0E5 /* SceneDelegate.swift in Sources */,
+				5F180CB928106BED00131ABA /* SceneDelegate.swift in Sources */,
+				5FCB5B3E2810579000DD17B5 /* Extension+UIColor.swift in Sources */,
+				5F2BAAA228097A6900668047 /* CollectionViewCell.swift in Sources */,
+				5F9733D52809F1650034495A /* TabBarController.swift in Sources */,
+				5F2BAAA62809910300668047 /* HeaderCollectionReusableView.swift in Sources */,
+				5F2BAAA428098D1000668047 /* Page.swift in Sources */,
+				5FCB5B42281059CD00DD17B5 /* Extension+UIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +427,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D43G9A8437;
@@ -365,6 +436,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -376,7 +448,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -386,6 +458,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D43G9A8437;
@@ -394,6 +467,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -405,7 +479,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
