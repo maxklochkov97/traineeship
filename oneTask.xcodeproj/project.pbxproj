@@ -10,9 +10,21 @@
 		5F2F826F27E305490067C0E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F826E27E305490067C0E5 /* AppDelegate.swift */; };
 		5F2F827127E305490067C0E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F827027E305490067C0E5 /* SceneDelegate.swift */; };
 		5F2F827327E305490067C0E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F827227E305490067C0E5 /* ViewController.swift */; };
-		5F2F827627E305490067C0E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2F827427E305490067C0E5 /* Main.storyboard */; };
 		5F2F827827E3054B0067C0E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F2F827727E3054B0067C0E5 /* Assets.xcassets */; };
 		5F2F827B27E3054B0067C0E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2F827927E3054B0067C0E5 /* LaunchScreen.storyboard */; };
+		5F76BF40281810DC0009624B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F76BF3F281810DC0009624B /* MainTabBarController.swift */; };
+		5F76BF4328181FD80009624B /* SF-UI-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F76BF4228181FD80009624B /* SF-UI-Text-Regular.otf */; };
+		5F76BF46281823590009624B /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F76BF45281823590009624B /* HelpViewController.swift */; };
+		5F76BF4C281824200009624B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F76BF4B281824200009624B /* ProfileViewController.swift */; };
+		5F76BF4E2818242E0009624B /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F76BF4D2818242E0009624B /* HistoryViewController.swift */; };
+		5F76BF502818243D0009624B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F76BF4F2818243D0009624B /* SearchViewController.swift */; };
+		5F76BF522818244B0009624B /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F76BF512818244B0009624B /* NewsViewController.swift */; };
+		5F76BF55281825030009624B /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F76BF54281825030009624B /* UIColor+extension.swift */; };
+		5F76BF5728182C970009624B /* HelpCollectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F76BF5628182C970009624B /* HelpCollectionHeader.swift */; };
+		5F76BF5928182F310009624B /* HelpCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F76BF5828182F310009624B /* HelpCollectionViewCell.swift */; };
+		5F76BF5B281831790009624B /* HelpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F76BF5A281831790009624B /* HelpModel.swift */; };
+		5F76BF5D281833480009624B /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F76BF5C281833480009624B /* Extension+UIView.swift */; };
+		5F76BF5F281847460009624B /* Officinasansextraboldscc.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F76BF5E281847460009624B /* Officinasansextraboldscc.otf */; };
 		FD66D01DD78C6D8855E7FA3F /* Pods_oneTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE0824AA98BED718D9F92FF /* Pods_oneTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,10 +33,22 @@
 		5F2F826E27E305490067C0E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F2F827027E305490067C0E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5F2F827227E305490067C0E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5F2F827527E305490067C0E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5F2F827727E3054B0067C0E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F2F827A27E3054B0067C0E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F2F827C27E3054B0067C0E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F76BF3F281810DC0009624B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		5F76BF4228181FD80009624B /* SF-UI-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Regular.otf"; sourceTree = "<group>"; };
+		5F76BF45281823590009624B /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		5F76BF4B281824200009624B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5F76BF4D2818242E0009624B /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		5F76BF4F2818243D0009624B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		5F76BF512818244B0009624B /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		5F76BF54281825030009624B /* UIColor+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
+		5F76BF5628182C970009624B /* HelpCollectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCollectionHeader.swift; sourceTree = "<group>"; };
+		5F76BF5828182F310009624B /* HelpCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCollectionViewCell.swift; sourceTree = "<group>"; };
+		5F76BF5A281831790009624B /* HelpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpModel.swift; sourceTree = "<group>"; };
+		5F76BF5C281833480009624B /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
+		5F76BF5E281847460009624B /* Officinasansextraboldscc.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Officinasansextraboldscc.otf; sourceTree = "<group>"; };
 		6D7BE05BE149E6F648E0FA31 /* Pods-oneTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-oneTask.release.xcconfig"; path = "Target Support Files/Pods-oneTask/Pods-oneTask.release.xcconfig"; sourceTree = "<group>"; };
 		8D642991776C30B2C5DD411E /* Pods-oneTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-oneTask.debug.xcconfig"; path = "Target Support Files/Pods-oneTask/Pods-oneTask.debug.xcconfig"; sourceTree = "<group>"; };
 		CCE0824AA98BED718D9F92FF /* Pods_oneTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_oneTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,7 +72,6 @@
 				8D642991776C30B2C5DD411E /* Pods-oneTask.debug.xcconfig */,
 				6D7BE05BE149E6F648E0FA31 /* Pods-oneTask.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -73,15 +96,83 @@
 		5F2F826D27E305490067C0E5 /* oneTask */ = {
 			isa = PBXGroup;
 			children = (
+				5F76BF53281824EA0009624B /* Extensions */,
+				5F76BF4128181FBA0009624B /* Fonts */,
+				5F76BF47281823D20009624B /* NewsPage */,
+				5F76BF48281823DA0009624B /* SearchPage */,
+				5F76BF44281823370009624B /* HelpPage */,
+				5F76BF49281823F50009624B /* HistoryPage */,
+				5F76BF4A281824130009624B /* ProfilePage */,
+				5F76BF3F281810DC0009624B /* MainTabBarController.swift */,
 				5F2F826E27E305490067C0E5 /* AppDelegate.swift */,
 				5F2F827027E305490067C0E5 /* SceneDelegate.swift */,
 				5F2F827227E305490067C0E5 /* ViewController.swift */,
-				5F2F827427E305490067C0E5 /* Main.storyboard */,
 				5F2F827727E3054B0067C0E5 /* Assets.xcassets */,
 				5F2F827927E3054B0067C0E5 /* LaunchScreen.storyboard */,
 				5F2F827C27E3054B0067C0E5 /* Info.plist */,
 			);
 			path = oneTask;
+			sourceTree = "<group>";
+		};
+		5F76BF4128181FBA0009624B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5F76BF4228181FD80009624B /* SF-UI-Text-Regular.otf */,
+				5F76BF5E281847460009624B /* Officinasansextraboldscc.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		5F76BF44281823370009624B /* HelpPage */ = {
+			isa = PBXGroup;
+			children = (
+				5F76BF45281823590009624B /* HelpViewController.swift */,
+				5F76BF5628182C970009624B /* HelpCollectionHeader.swift */,
+				5F76BF5828182F310009624B /* HelpCollectionViewCell.swift */,
+				5F76BF5A281831790009624B /* HelpModel.swift */,
+			);
+			path = HelpPage;
+			sourceTree = "<group>";
+		};
+		5F76BF47281823D20009624B /* NewsPage */ = {
+			isa = PBXGroup;
+			children = (
+				5F76BF512818244B0009624B /* NewsViewController.swift */,
+			);
+			path = NewsPage;
+			sourceTree = "<group>";
+		};
+		5F76BF48281823DA0009624B /* SearchPage */ = {
+			isa = PBXGroup;
+			children = (
+				5F76BF4F2818243D0009624B /* SearchViewController.swift */,
+			);
+			path = SearchPage;
+			sourceTree = "<group>";
+		};
+		5F76BF49281823F50009624B /* HistoryPage */ = {
+			isa = PBXGroup;
+			children = (
+				5F76BF4D2818242E0009624B /* HistoryViewController.swift */,
+			);
+			path = HistoryPage;
+			sourceTree = "<group>";
+		};
+		5F76BF4A281824130009624B /* ProfilePage */ = {
+			isa = PBXGroup;
+			children = (
+				5F76BF4B281824200009624B /* ProfileViewController.swift */,
+			);
+			path = ProfilePage;
+			sourceTree = "<group>";
+		};
+		5F76BF53281824EA0009624B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5F76BF54281825030009624B /* UIColor+extension.swift */,
+				5F76BF5C281833480009624B /* Extension+UIView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		C8073BF515D7FA274EFE9A0B /* Frameworks */ = {
@@ -99,6 +190,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5F2F827F27E3054B0067C0E5 /* Build configuration list for PBXNativeTarget "oneTask" */;
 			buildPhases = (
+				5F76BF61281851980009624B /* Run SwiftLint */,
 				C47EE33A3DF27FEA4A701A6D /* [CP] Check Pods Manifest.lock */,
 				5F2F826727E305490067C0E5 /* Sources */,
 				5F2F826827E305490067C0E5 /* Frameworks */,
@@ -153,8 +245,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F2F827B27E3054B0067C0E5 /* LaunchScreen.storyboard in Resources */,
+				5F76BF5F281847460009624B /* Officinasansextraboldscc.otf in Resources */,
 				5F2F827827E3054B0067C0E5 /* Assets.xcassets in Resources */,
-				5F2F827627E305490067C0E5 /* Main.storyboard in Resources */,
+				5F76BF4328181FD80009624B /* SF-UI-Text-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +270,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-oneTask/Pods-oneTask-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		5F76BF61281851980009624B /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		C47EE33A3DF27FEA4A701A6D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -207,23 +318,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F76BF5D281833480009624B /* Extension+UIView.swift in Sources */,
+				5F76BF4C281824200009624B /* ProfileViewController.swift in Sources */,
+				5F76BF5728182C970009624B /* HelpCollectionHeader.swift in Sources */,
 				5F2F827327E305490067C0E5 /* ViewController.swift in Sources */,
+				5F76BF5928182F310009624B /* HelpCollectionViewCell.swift in Sources */,
+				5F76BF502818243D0009624B /* SearchViewController.swift in Sources */,
+				5F76BF40281810DC0009624B /* MainTabBarController.swift in Sources */,
+				5F76BF5B281831790009624B /* HelpModel.swift in Sources */,
 				5F2F826F27E305490067C0E5 /* AppDelegate.swift in Sources */,
 				5F2F827127E305490067C0E5 /* SceneDelegate.swift in Sources */,
+				5F76BF522818244B0009624B /* NewsViewController.swift in Sources */,
+				5F76BF55281825030009624B /* UIColor+extension.swift in Sources */,
+				5F76BF4E2818242E0009624B /* HistoryViewController.swift in Sources */,
+				5F76BF46281823590009624B /* HelpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5F2F827427E305490067C0E5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5F2F827527E305490067C0E5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5F2F827927E3054B0067C0E5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -364,7 +478,7 @@
 				INFOPLIST_FILE = oneTask/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -376,7 +490,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -393,7 +507,7 @@
 				INFOPLIST_FILE = oneTask/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -405,7 +519,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
