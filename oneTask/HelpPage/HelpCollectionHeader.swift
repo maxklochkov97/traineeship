@@ -11,7 +11,7 @@ class HelpCollectionHeader: UICollectionReusableView {
 
     private let headerLabel: UILabel = {
         let label = UILabel()
-        label.text = "Выберите категорию помощи"
+        label.text = NSLocalizedString("helpPageHeaderText", comment: "")
         label.textAlignment = .center
         label.textColor = .charcoalGrey
         label.font = UIFont(name: "SFUIText-Regular", size: 17)

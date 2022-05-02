@@ -35,28 +35,28 @@ class MainTabBarController: UITabBarController {
 
     private func setupControllers() {
         let newsNavigationController = UINavigationController(rootViewController: newsVC)
-        newsVC.navigationItem.title = "Новости"
-        newsVC.tabBarItem.title = "Новости"
+        newsVC.navigationItem.title = NSLocalizedString("newsVC", comment: "")
+        newsVC.tabBarItem.title = NSLocalizedString("newsVC", comment: "")
         newsVC.tabBarItem.image = UIImage(systemName: "list.bullet")
 
         let searchNavigationController = UINavigationController(rootViewController: searchVC)
-        searchVC.navigationItem.title = "Поиск"
-        searchVC.tabBarItem.title = "Поиск"
+        searchVC.navigationItem.title = NSLocalizedString("searchVC", comment: "")
+        searchVC.tabBarItem.title = NSLocalizedString("searchVC", comment: "")
         searchVC.tabBarItem.image = UIImage(systemName: "magnifyingglass")
 
         let helpNavigationController = UINavigationController(rootViewController: helpVC)
-        helpVC.navigationItem.title = "Помочь"
-        helpVC.tabBarItem.title = "Помочь"
+        helpVC.navigationItem.title = NSLocalizedString("helpVC", comment: "")
+        helpVC.tabBarItem.title = NSLocalizedString("helpVC", comment: "")
         helpVC.tabBarItem.image = UIImage(systemName: "heart.circle.fill")
 
         let historyNavigationController = UINavigationController(rootViewController: historyVC)
-        historyVC.navigationItem.title = "История"
-        historyVC.tabBarItem.title = "История"
+        historyVC.navigationItem.title = NSLocalizedString("historyVC", comment: "")
+        historyVC.tabBarItem.title = NSLocalizedString("historyVC", comment: "")
         historyVC.tabBarItem.image = UIImage(systemName: "clock.arrow.circlepath")
 
         let profileNavigationController = UINavigationController(rootViewController: profileVC)
-        profileVC.navigationItem.title = "Профиль"
-        profileVC.tabBarItem.title = "Профиль"
+        profileVC.navigationItem.title = NSLocalizedString("profileVC", comment: "")
+        profileVC.tabBarItem.title = NSLocalizedString("profileVC", comment: "")
         profileVC.tabBarItem.image = UIImage(systemName: "person.crop.circle")
 
         viewControllers = [newsNavigationController,

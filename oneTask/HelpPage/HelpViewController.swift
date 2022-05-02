@@ -17,7 +17,7 @@ class HelpViewController: UIViewController {
 
     private let navBarTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Помочь"
+        label.text = NSLocalizedString("helpVC", comment: "")
         label.textAlignment = .center
         label.textColor = .white
         label.font = UIFont(name: "OfficinaSansExtraBoldSCC", size: 21)

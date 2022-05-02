@@ -20,7 +20,6 @@ class HelpCollectionViewCell: UICollectionViewCell {
 
     private let headerLabel: UILabel = {
         let label = UILabel()
-        label.text = "headerLabel"
         label.textAlignment = .center
         label.textColor = .lightOliveGreen
         label.font = UIFont(name: "OfficinaSansExtraBoldSCC", size: 15)
