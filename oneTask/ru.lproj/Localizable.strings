@@ -1,0 +1,15 @@
+/* 
+  Localization.strings
+  oneTask
+
+  Created by Максим Клочков on 02.05.2022.
+  
+*/
+
+"helpPageHeaderText" = "Выберите категорию помощи";
+"newsVC" = "Новости";
+"searchVC" = "Поиск";
+"helpVC" = "Помочь";
+"historyVC" = "История";
+"profileVC" = "Профиль";
+
