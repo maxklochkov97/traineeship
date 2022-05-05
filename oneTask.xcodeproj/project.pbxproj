@@ -12,6 +12,11 @@
 		5F2F827327E305490067C0E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F827227E305490067C0E5 /* ViewController.swift */; };
 		5F2F827827E3054B0067C0E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F2F827727E3054B0067C0E5 /* Assets.xcassets */; };
 		5F2F827B27E3054B0067C0E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2F827927E3054B0067C0E5 /* LaunchScreen.storyboard */; };
+		5F3CF7D62823F19800E90DAE /* CharityEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3CF7D52823F19800E90DAE /* CharityEventsViewController.swift */; };
+		5F3CF7D82823F1C900E90DAE /* CharityEventsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3CF7D72823F1C900E90DAE /* CharityEventsCollectionViewCell.swift */; };
+		5F3CF7DA2823F2BC00E90DAE /* CharityEventsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3CF7D92823F2BC00E90DAE /* CharityEventsHeaderView.swift */; };
+		5F3CF7DC2823F68A00E90DAE /* EventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3CF7DB2823F68A00E90DAE /* EventsModel.swift */; };
+		5F3CF7DF282402F000E90DAE /* TapHelpCollectionViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3CF7DE282402F000E90DAE /* TapHelpCollectionViewCellDelegate.swift */; };
 		5F5AA1FA281FF3A700E851E4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5F5AA1FC281FF3A700E851E4 /* Localizable.strings */; };
 		5F76BF40281810DC0009624B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F76BF3F281810DC0009624B /* MainTabBarController.swift */; };
 		5F76BF4328181FD80009624B /* SF-UI-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F76BF4228181FD80009624B /* SF-UI-Text-Regular.otf */; };
@@ -37,6 +42,11 @@
 		5F2F827727E3054B0067C0E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F2F827A27E3054B0067C0E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F2F827C27E3054B0067C0E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F3CF7D52823F19800E90DAE /* CharityEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityEventsViewController.swift; sourceTree = "<group>"; };
+		5F3CF7D72823F1C900E90DAE /* CharityEventsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityEventsCollectionViewCell.swift; sourceTree = "<group>"; };
+		5F3CF7D92823F2BC00E90DAE /* CharityEventsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityEventsHeaderView.swift; sourceTree = "<group>"; };
+		5F3CF7DB2823F68A00E90DAE /* EventsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsModel.swift; sourceTree = "<group>"; };
+		5F3CF7DE282402F000E90DAE /* TapHelpCollectionViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapHelpCollectionViewCellDelegate.swift; sourceTree = "<group>"; };
 		5F5AA1F7281FF38200E851E4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		5F5AA1FB281FF3A700E851E4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5F76BF3F281810DC0009624B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -99,6 +109,7 @@
 		5F2F826D27E305490067C0E5 /* oneTask */ = {
 			isa = PBXGroup;
 			children = (
+				5F3CF7DD282402E300E90DAE /* Protocols */,
 				5F76BF53281824EA0009624B /* Extensions */,
 				5F76BF4128181FBA0009624B /* Fonts */,
 				5F76BF47281823D20009624B /* NewsPage */,
@@ -118,6 +129,25 @@
 			path = oneTask;
 			sourceTree = "<group>";
 		};
+		5F3CF7D42823F14C00E90DAE /* CharityEvents */ = {
+			isa = PBXGroup;
+			children = (
+				5F3CF7D52823F19800E90DAE /* CharityEventsViewController.swift */,
+				5F3CF7D72823F1C900E90DAE /* CharityEventsCollectionViewCell.swift */,
+				5F3CF7D92823F2BC00E90DAE /* CharityEventsHeaderView.swift */,
+				5F3CF7DB2823F68A00E90DAE /* EventsModel.swift */,
+			);
+			path = CharityEvents;
+			sourceTree = "<group>";
+		};
+		5F3CF7DD282402E300E90DAE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5F3CF7DE282402F000E90DAE /* TapHelpCollectionViewCellDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		5F76BF4128181FBA0009624B /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +160,7 @@
 		5F76BF44281823370009624B /* HelpPage */ = {
 			isa = PBXGroup;
 			children = (
+				5F3CF7D42823F14C00E90DAE /* CharityEvents */,
 				5F76BF45281823590009624B /* HelpViewController.swift */,
 				5F76BF5628182C970009624B /* HelpCollectionHeader.swift */,
 				5F76BF5828182F310009624B /* HelpCollectionViewCell.swift */,
@@ -328,15 +359,20 @@
 				5F76BF4C281824200009624B /* ProfileViewController.swift in Sources */,
 				5F76BF5728182C970009624B /* HelpCollectionHeader.swift in Sources */,
 				5F2F827327E305490067C0E5 /* ViewController.swift in Sources */,
+				5F3CF7DC2823F68A00E90DAE /* EventsModel.swift in Sources */,
 				5F76BF5928182F310009624B /* HelpCollectionViewCell.swift in Sources */,
 				5F76BF502818243D0009624B /* SearchViewController.swift in Sources */,
 				5F76BF40281810DC0009624B /* MainTabBarController.swift in Sources */,
 				5F76BF5B281831790009624B /* HelpModel.swift in Sources */,
 				5F2F826F27E305490067C0E5 /* AppDelegate.swift in Sources */,
 				5F2F827127E305490067C0E5 /* SceneDelegate.swift in Sources */,
+				5F3CF7D62823F19800E90DAE /* CharityEventsViewController.swift in Sources */,
 				5F76BF522818244B0009624B /* NewsViewController.swift in Sources */,
 				5F76BF55281825030009624B /* UIColor+extension.swift in Sources */,
+				5F3CF7DA2823F2BC00E90DAE /* CharityEventsHeaderView.swift in Sources */,
 				5F76BF4E2818242E0009624B /* HistoryViewController.swift in Sources */,
+				5F3CF7D82823F1C900E90DAE /* CharityEventsCollectionViewCell.swift in Sources */,
+				5F3CF7DF282402F000E90DAE /* TapHelpCollectionViewCellDelegate.swift in Sources */,
 				5F76BF46281823590009624B /* HelpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -51,15 +51,8 @@ class HelpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        addBackButtonNavBar()
         setupNavBar()
         layout()
-    }
-
-    private func addBackButtonNavBar() {
-        let addButton = UIBarButtonItem(image: UIImage(named: "back"), style: .done, target: self, action: #selector(tabButton))
-        self.navigationItem.leftBarButtonItem = addButton
-        self.navigationItem.leftBarButtonItem?.tintColor = .white
     }
 
     @objc private func tabButton() {
@@ -76,6 +69,10 @@ class HelpViewController: UIViewController {
 
         self.navigationController?.navigationBar.standardAppearance = navBarAppearance
         self.navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+
+        let leftBackButton = UIBarButtonItem(image: UIImage(named: "back"), style: .done, target: self, action: #selector(tabButton))
+        leftBackButton.tintColor = .white
+        self.navigationItem.leftBarButtonItem = leftBackButton
     }
 
     private func layout() {
@@ -110,7 +107,16 @@ extension HelpViewController: UICollectionViewDataSource {
         }
 
         cell.configure(with: allPages[indexPath.row])
+
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapCellAction))
+        cell.addGestureRecognizer(tapGesture)
+        
         return cell
+    }
+
+    @objc private func tapCellAction() {
+        let newView = CharityEventsViewController()
+        navigationController?.pushViewController(newView, animated: true)
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

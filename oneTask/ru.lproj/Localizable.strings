@@ -7,9 +7,13 @@
 */
 
 "helpPageHeaderText" = "Выберите категорию помощи";
+
 "newsVC" = "Новости";
 "searchVC" = "Поиск";
 "helpVC" = "Помочь";
 "historyVC" = "История";
 "profileVC" = "Профиль";
 
+"childrenNavTitle" = "Дети";
+"сhildrenCurrentButton" = "Текущие";
+"сhildrenCompletedButton" = "Завершенные";
