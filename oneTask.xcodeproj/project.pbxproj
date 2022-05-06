@@ -25,7 +25,7 @@
 		5F76BF4E2818242E0009624B /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F76BF4D2818242E0009624B /* HistoryViewController.swift */; };
 		5F76BF502818243D0009624B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F76BF4F2818243D0009624B /* SearchViewController.swift */; };
 		5F76BF522818244B0009624B /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F76BF512818244B0009624B /* NewsViewController.swift */; };
-		5F76BF55281825030009624B /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F76BF54281825030009624B /* UIColor+extension.swift */; };
+		5F76BF55281825030009624B /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F76BF54281825030009624B /* Extension+UIColor.swift */; };
 		5F76BF5728182C970009624B /* HelpCollectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F76BF5628182C970009624B /* HelpCollectionHeader.swift */; };
 		5F76BF5928182F310009624B /* HelpCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F76BF5828182F310009624B /* HelpCollectionViewCell.swift */; };
 		5F76BF5B281831790009624B /* HelpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F76BF5A281831790009624B /* HelpModel.swift */; };
@@ -33,6 +33,10 @@
 		5F76BF5F281847460009624B /* Officinasansextraboldscc.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F76BF5E281847460009624B /* Officinasansextraboldscc.otf */; };
 		5FD56CB82825146C008F1FCB /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = 5FD56CB72825146C008F1FCB /* events.json */; };
 		5FD56CBB28253037008F1FCB /* category.json in Resources */ = {isa = PBXBuildFile; fileRef = 5FD56CBA28253037008F1FCB /* category.json */; };
+		5FD56CBD2825391A008F1FCB /* CharityEventsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD56CBC2825391A008F1FCB /* CharityEventsDetailViewController.swift */; };
+		5FD56CBF28254456008F1FCB /* CharityEventsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD56CBE28254456008F1FCB /* CharityEventsDetailView.swift */; };
+		5FD56CC128254B68008F1FCB /* Extension+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD56CC028254B68008F1FCB /* Extension+UILabel.swift */; };
+		5FD56CC528255E7B008F1FCB /* CustomTapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD56CC428255E7B008F1FCB /* CustomTapGestureRecognizer.swift */; };
 		FD66D01DD78C6D8855E7FA3F /* Pods_oneTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE0824AA98BED718D9F92FF /* Pods_oneTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,7 +62,7 @@
 		5F76BF4D2818242E0009624B /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		5F76BF4F2818243D0009624B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5F76BF512818244B0009624B /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
-		5F76BF54281825030009624B /* UIColor+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
+		5F76BF54281825030009624B /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
 		5F76BF5628182C970009624B /* HelpCollectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCollectionHeader.swift; sourceTree = "<group>"; };
 		5F76BF5828182F310009624B /* HelpCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCollectionViewCell.swift; sourceTree = "<group>"; };
 		5F76BF5A281831790009624B /* HelpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpModel.swift; sourceTree = "<group>"; };
@@ -66,6 +70,10 @@
 		5F76BF5E281847460009624B /* Officinasansextraboldscc.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Officinasansextraboldscc.otf; sourceTree = "<group>"; };
 		5FD56CB72825146C008F1FCB /* events.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = events.json; sourceTree = "<group>"; };
 		5FD56CBA28253037008F1FCB /* category.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = category.json; sourceTree = "<group>"; };
+		5FD56CBC2825391A008F1FCB /* CharityEventsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityEventsDetailViewController.swift; sourceTree = "<group>"; };
+		5FD56CBE28254456008F1FCB /* CharityEventsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityEventsDetailView.swift; sourceTree = "<group>"; };
+		5FD56CC028254B68008F1FCB /* Extension+UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UILabel.swift"; sourceTree = "<group>"; };
+		5FD56CC428255E7B008F1FCB /* CustomTapGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTapGestureRecognizer.swift; sourceTree = "<group>"; };
 		6D7BE05BE149E6F648E0FA31 /* Pods-oneTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-oneTask.release.xcconfig"; path = "Target Support Files/Pods-oneTask/Pods-oneTask.release.xcconfig"; sourceTree = "<group>"; };
 		8D642991776C30B2C5DD411E /* Pods-oneTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-oneTask.debug.xcconfig"; path = "Target Support Files/Pods-oneTask/Pods-oneTask.debug.xcconfig"; sourceTree = "<group>"; };
 		CCE0824AA98BED718D9F92FF /* Pods_oneTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_oneTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +150,7 @@
 				5F3CF7D72823F1C900E90DAE /* CharityEventsCollectionViewCell.swift */,
 				5F3CF7D92823F2BC00E90DAE /* CharityEventsHeaderView.swift */,
 				5F3CF7DB2823F68A00E90DAE /* EventsModel.swift */,
+				5FD56CC428255E7B008F1FCB /* CustomTapGestureRecognizer.swift */,
 			);
 			path = CharityEvents;
 			sourceTree = "<group>";
@@ -210,8 +219,9 @@
 		5F76BF53281824EA0009624B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				5F76BF54281825030009624B /* UIColor+extension.swift */,
+				5F76BF54281825030009624B /* Extension+UIColor.swift */,
 				5F76BF5C281833480009624B /* Extension+UIView.swift */,
+				5FD56CC028254B68008F1FCB /* Extension+UILabel.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -228,6 +238,8 @@
 		5FD56CB928252D05008F1FCB /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				5FD56CBC2825391A008F1FCB /* CharityEventsDetailViewController.swift */,
+				5FD56CBE28254456008F1FCB /* CharityEventsDetailView.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -383,16 +395,20 @@
 				5F76BF4C281824200009624B /* ProfileViewController.swift in Sources */,
 				5F76BF5728182C970009624B /* HelpCollectionHeader.swift in Sources */,
 				5F2F827327E305490067C0E5 /* ViewController.swift in Sources */,
+				5FD56CC128254B68008F1FCB /* Extension+UILabel.swift in Sources */,
 				5F3CF7DC2823F68A00E90DAE /* EventsModel.swift in Sources */,
+				5FD56CBF28254456008F1FCB /* CharityEventsDetailView.swift in Sources */,
 				5F76BF5928182F310009624B /* HelpCollectionViewCell.swift in Sources */,
 				5F76BF502818243D0009624B /* SearchViewController.swift in Sources */,
 				5F76BF40281810DC0009624B /* MainTabBarController.swift in Sources */,
 				5F76BF5B281831790009624B /* HelpModel.swift in Sources */,
 				5F2F826F27E305490067C0E5 /* AppDelegate.swift in Sources */,
+				5FD56CC528255E7B008F1FCB /* CustomTapGestureRecognizer.swift in Sources */,
+				5FD56CBD2825391A008F1FCB /* CharityEventsDetailViewController.swift in Sources */,
 				5F2F827127E305490067C0E5 /* SceneDelegate.swift in Sources */,
 				5F3CF7D62823F19800E90DAE /* CharityEventsViewController.swift in Sources */,
 				5F76BF522818244B0009624B /* NewsViewController.swift in Sources */,
-				5F76BF55281825030009624B /* UIColor+extension.swift in Sources */,
+				5F76BF55281825030009624B /* Extension+UIColor.swift in Sources */,
 				5F3CF7DA2823F2BC00E90DAE /* CharityEventsHeaderView.swift in Sources */,
 				5F76BF4E2818242E0009624B /* HistoryViewController.swift in Sources */,
 				5F3CF7D82823F1C900E90DAE /* CharityEventsCollectionViewCell.swift in Sources */,

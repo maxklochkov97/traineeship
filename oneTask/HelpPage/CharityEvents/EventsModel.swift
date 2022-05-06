@@ -16,6 +16,7 @@ struct CharityEvents: Codable {
     var imageTwo: String
     var imageThree: String
     var title: String
+    var phone: String
     var description: String
     var deadline: String
     var fond: String
@@ -24,6 +25,7 @@ struct CharityEvents: Codable {
 
     private enum CodingKeys: String, CodingKey {
         case image
+        case phone
         case imageTwo = "image_two"
         case imageThree = "image_three"
         case title

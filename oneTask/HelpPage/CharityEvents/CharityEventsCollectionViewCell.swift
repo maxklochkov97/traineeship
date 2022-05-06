@@ -12,7 +12,6 @@ class CharityEventsCollectionViewCell: UICollectionViewCell {
     private let mainPhotoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        //imageView.image = UIImage(named: "ph1")
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         return imageView
@@ -34,7 +33,6 @@ class CharityEventsCollectionViewCell: UICollectionViewCell {
         label.textColor = .blueGrey
         label.numberOfLines = 2
         label.textAlignment = .center
-        //label.text = "Спонсоры отремонтируют школу-интернат"
         return label
     }()
 
@@ -54,7 +52,6 @@ class CharityEventsCollectionViewCell: UICollectionViewCell {
         label.numberOfLines = 3
         label.textAlignment = .center
         label.font = UIFont(name: "SFUIText-Regular", size: 15)
-        //label.text = "Дубовская школа-интернат для детей с ограниченными возможностями здоровья стала первой в области"
         return label
     }()
 
@@ -77,11 +74,8 @@ class CharityEventsCollectionViewCell: UICollectionViewCell {
     private let deadlineLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .darkSlateBlue
-        label.font = UIFont(name: "SFUIText-Regular", size: 11)
-        label.numberOfLines = 3
         label.textColor = .white
-        //label.text = "deadlineLabel"
+        label.font = UIFont(name: "SFUIText-Regular", size: 11)
         return label
     }()
 
@@ -106,7 +100,6 @@ class CharityEventsCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         layout()
-        //setupGestures()
     }
 
     required init?(coder: NSCoder) {
