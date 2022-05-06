@@ -41,18 +41,31 @@ class HelpViewController: UIViewController {
         return collectionView
     }()
 
-    private let allPages = [
-        Page(imageName: "сhildren", headerText: "Дети"),
-        Page(imageName: "adults", headerText: "Взрослые"),
-        Page(imageName: "theElderly", headerText: "Пожилые"),
-        Page(imageName: "animals", headerText: "Животные"),
-        Page(imageName: "events", headerText: "Мероприятия")
-    ]
+    private var allCategories = [Category]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadDataFromJSON()
         setupNavBar()
         layout()
+    }
+
+    private func loadDataFromJSON() {
+        guard let path = Bundle.main.path(forResource: "category", ofType: "json") else { return }
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            let jsonDate = try Data(contentsOf: url)
+            let currentCategories = try JSONDecoder().decode(Categories.self, from: jsonDate)
+            self.allCategories = currentCategories.categories
+
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+
+        } catch {
+            print(error)
+        }
     }
 
     @objc private func tabButton() {
@@ -95,7 +108,7 @@ class HelpViewController: UIViewController {
 extension HelpViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return allPages.count
+        return allCategories.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -106,7 +119,7 @@ extension HelpViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
 
-        cell.configure(with: allPages[indexPath.row])
+        cell.configure(with: allCategories[indexPath.row])
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapCellAction))
         cell.addGestureRecognizer(tapGesture)

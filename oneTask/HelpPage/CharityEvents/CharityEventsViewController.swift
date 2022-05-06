@@ -19,8 +19,7 @@ class CharityEventsViewController: UIViewController {
         return label
     }()
 
-    private var eventsModel = [Events]()
-    var xxxxx: CGFloat = 0
+    private var eventsModel = [CharityEvents]()
 
     private let layoutCol: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
@@ -50,8 +49,27 @@ class CharityEventsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadDataFromJSON()
         layout()
         makeBarBottonItem()
+    }
+
+    private func loadDataFromJSON() {
+        guard let path = Bundle.main.path(forResource: "events", ofType: "json") else { return }
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            let jsonDate = try Data(contentsOf: url)
+            let currentEvents = try JSONDecoder().decode(Events.self, from: jsonDate)
+            self.eventsModel = currentEvents.events
+
+            DispatchQueue.main.async {
+                self.charityEventsCollectionView.reloadData()
+            }
+
+        } catch {
+            print(error)
+        }
     }
 
     private func makeBarBottonItem() {
@@ -91,7 +109,7 @@ class CharityEventsViewController: UIViewController {
 extension CharityEventsViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        2
+        eventsModel.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -101,10 +119,9 @@ extension CharityEventsViewController: UICollectionViewDataSource {
             for: indexPath) as? CharityEventsCollectionViewCell else {
                 return UICollectionViewCell()
             }
-
-        //cell.configure(with: photos[indexPath.row])
+        cell.configure(with: eventsModel[indexPath.row])
         //cell.buttonAllPhotoCellDelegate = self
-        xxxxx = cell.bounds.height
+
         return cell
     }
 
@@ -114,8 +131,8 @@ extension CharityEventsViewController: UICollectionViewDataSource {
             ofKind: UICollectionView.elementKindSectionHeader,
             withReuseIdentifier: CharityEventsHeaderView.identifier,
             for: indexPath) as? CharityEventsHeaderView else {
-            return UICollectionReusableView()
-        }
+                return UICollectionReusableView()
+            }
 
         //header.configure()
         return header

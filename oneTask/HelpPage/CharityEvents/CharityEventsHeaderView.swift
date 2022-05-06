@@ -14,7 +14,6 @@ class CharityEventsHeaderView: UICollectionReusableView {
         button.setTitle(NSLocalizedString("сhildrenCurrentButton", comment: ""), for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .leaf
-        //button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -26,7 +25,6 @@ class CharityEventsHeaderView: UICollectionReusableView {
         button.setTitleColor(.leaf, for: .normal)
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor.leaf.cgColor
-        //button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         button.layer.cornerRadius = 0
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -55,20 +53,12 @@ class CharityEventsHeaderView: UICollectionReusableView {
         [buttonHorizontalStack].forEach({ self.addSubview($0) })
         [currentButton, completeButton].forEach({self.buttonHorizontalStack.addArrangedSubview($0)})
 
-        //[completeButton].forEach({ self.addSubview($0) })
-        
         let offsetTopBottom: CGFloat = 16
-        let offsetSides: CGFloat = 10
 
         NSLayoutConstraint.activate([
-            //buttonHorizontalStack.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             buttonHorizontalStack.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            buttonHorizontalStack.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-            buttonHorizontalStack.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-
-            //buttonHorizontalStack.widthAnchor.constraint(equalToConstant: 200)
-
-
+            buttonHorizontalStack.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: offsetTopBottom),
+            buttonHorizontalStack.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -offsetTopBottom)
         ])
     }
 }

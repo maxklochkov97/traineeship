@@ -42,9 +42,9 @@ class HelpCollectionViewCell: UICollectionViewCell {
         tapCellDelegate?.tapCellAction()
     }
 
-    public func configure(with page: Page) {
-        self.imageView.image = UIImage(named: page.imageName)
-        self.headerLabel.text = page.headerText
+    public func configure(with page: Category) {
+        self.imageView.image = UIImage(named: page.image)
+        self.headerLabel.text = page.title
         self.contentView.backgroundColor = .lightGreyTwo
     }
 

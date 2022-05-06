@@ -12,7 +12,7 @@ class CharityEventsCollectionViewCell: UICollectionViewCell {
     private let mainPhotoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "ph1")
+        //imageView.image = UIImage(named: "ph1")
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         return imageView
@@ -34,7 +34,7 @@ class CharityEventsCollectionViewCell: UICollectionViewCell {
         label.textColor = .blueGrey
         label.numberOfLines = 2
         label.textAlignment = .center
-        label.text = "Спонсоры отремонтируют школу-интернат"
+        //label.text = "Спонсоры отремонтируют школу-интернат"
         return label
     }()
 
@@ -54,7 +54,7 @@ class CharityEventsCollectionViewCell: UICollectionViewCell {
         label.numberOfLines = 3
         label.textAlignment = .center
         label.font = UIFont(name: "SFUIText-Regular", size: 15)
-        label.text = "Дубовская школа-интернат для детей с ограниченными возможностями здоровья стала первой в области"
+        //label.text = "Дубовская школа-интернат для детей с ограниченными возможностями здоровья стала первой в области"
         return label
     }()
 
@@ -81,7 +81,7 @@ class CharityEventsCollectionViewCell: UICollectionViewCell {
         label.font = UIFont(name: "SFUIText-Regular", size: 11)
         label.numberOfLines = 3
         label.textColor = .white
-        label.text = "deadlineLabel"
+        //label.text = "deadlineLabel"
         return label
     }()
 
@@ -113,11 +113,11 @@ class CharityEventsCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    public func configure(with events: Events) {
-        //        self.imageView.image = UIImage(named: page.imageName)
-        //        self.headerLabel.text = page.headerText
-        //        self.contentView.backgroundColor = .lightGreyTwo
-//        self.photoImageView.image = UIImage(named: photo.imageName)
+    public func configure(with events: CharityEvents) {
+        self.mainPhotoImageView.image = UIImage(named: events.image)
+        self.titleLabel.text = events.title
+        self.descriptionLabel.text = events.description
+        self.deadlineLabel.text = events.deadline
     }
 
     private func layout() {
@@ -149,10 +149,9 @@ class CharityEventsCollectionViewCell: UICollectionViewCell {
             mainLabelVerticalStack.topAnchor.constraint(equalTo: mainPhotoImageView.bottomAnchor),
             mainLabelVerticalStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: offsetStackLabel),
             mainLabelVerticalStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -offsetStackLabel),
-            mainLabelVerticalStack.bottomAnchor.constraint(equalTo: leafView.topAnchor, constant: -offsetStackLabel),
             titleLabel.heightAnchor.constraint(equalToConstant: 40),
 
-            leafView.topAnchor.constraint(equalTo: mainLabelVerticalStack.bottomAnchor),
+            leafView.topAnchor.constraint(equalTo: mainLabelVerticalStack.bottomAnchor, constant: offsetStackLabel),
             leafView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             leafView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             leafView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
