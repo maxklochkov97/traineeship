@@ -14,9 +14,8 @@ class PhotoPreviewCollectionViewCell: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.layer.cornerRadius = 0
-        imageView.layer.borderWidth = 0
-        imageView.backgroundColor = .systemBlue
+        imageView.layer.cornerRadius = 18
+        imageView.layer.borderWidth = 2
         imageView.layer.borderColor = UIColor.lightGreyOne.cgColor
         return imageView
     }()
@@ -32,12 +31,10 @@ class PhotoPreviewCollectionViewCell: UICollectionViewCell {
 
     func configure(with photo: Photo) {
         self.photoImageView.image = UIImage(named: photo.image)
-        photoImageView.layer.cornerRadius = 0
     }
 
     private func layout() {
         [photoImageView].forEach({ contentView.addSubview($0)})
-        self.contentView.backgroundColor = .red
 
         NSLayoutConstraint.activate([
             photoImageView.topAnchor.constraint(equalTo: contentView.topAnchor),

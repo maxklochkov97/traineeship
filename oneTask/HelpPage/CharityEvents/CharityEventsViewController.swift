@@ -50,6 +50,7 @@ class CharityEventsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .white
         loadDataFromJSON()
         layout()
         setupNavBar()
@@ -95,8 +96,6 @@ class CharityEventsViewController: UIViewController {
     }
     
     private func layout() {
-        view.backgroundColor = .red
-        
         [charityEventsCollectionView].forEach({ self.view.addSubview($0)})
         
         let offset: CGFloat = 0

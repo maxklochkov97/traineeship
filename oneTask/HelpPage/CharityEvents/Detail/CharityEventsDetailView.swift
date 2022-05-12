@@ -9,10 +9,8 @@ import UIKit
 
 class CharityEventsDetailView: UIView {
 
-    private let photoParticipantsView: PhotoParticipantsView = {
+    var photoParticipantsView: PhotoParticipantsView = {
         let view = PhotoParticipantsView()
-        view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor.whiteTwo.cgColor
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -276,7 +274,7 @@ class CharityEventsDetailView: UIView {
             photoParticipantsView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: offset),
             photoParticipantsView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             photoParticipantsView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            photoParticipantsView.heightAnchor.constraint(equalToConstant: 70),
+            photoParticipantsView.heightAnchor.constraint(equalToConstant: 72),
             photoParticipantsView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }

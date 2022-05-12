@@ -29,11 +29,17 @@ class CharityEventsDetailViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+
+    private let additionalButtonsView: AdditionalButtonsView = {
+        let view = AdditionalButtonsView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        //loadDataFromJSON()
+        loadDataFromJSON()
         layout()
     }
 
@@ -60,7 +66,6 @@ class CharityEventsDetailViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
 
-    /*
     private func loadDataFromJSON() {
         guard let path = Bundle.main.path(forResource: "photosParticipants", ofType: "json") else { return }
         let url = URL(fileURLWithPath: path)
@@ -68,21 +73,15 @@ class CharityEventsDetailViewController: UIViewController {
         do {
             let jsonDate = try Data(contentsOf: url)
             let currentPhotos = try JSONDecoder().decode(PhotoParticipants.self, from: jsonDate)
-            self.photoParticipants = currentPhotos.photos
-
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
-
+            self.mainView.photoParticipantsView.configure(with: currentPhotos.photos)
         } catch {
             print(error)
         }
     }
-    */
 
     private func layout() {
         
-        [scrollView].forEach({ view.addSubview($0) })
+        [scrollView, additionalButtonsView].forEach({ view.addSubview($0) })
         [mainView].forEach({ scrollView.addSubview($0) })
 
         NSLayoutConstraint.activate([
@@ -90,14 +89,19 @@ class CharityEventsDetailViewController: UIViewController {
 
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: additionalButtonsView.topAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
 
             mainView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             mainView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             mainView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             mainView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            mainView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
+            mainView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+
+            additionalButtonsView.topAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            additionalButtonsView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            additionalButtonsView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            additionalButtonsView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
 }

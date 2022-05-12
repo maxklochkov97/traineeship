@@ -2,23 +2,28 @@
     "categories": [
             {
             "image": "сhildren",
-            "title": "Дети"
+            "title": "Дети",
+            "identifier": "сhildren"
             },
             {
             "image": "adults",
-            "title": "Взрослые"
+            "title": "Взрослые",
+            "identifier": "adults"
             },
             {
             "image": "theElderly",
-            "title": "Пожилые"
+            "title": "Пожилые",
+            "identifier": "theElderly"
             },
             {
             "image": "animals",
-            "title": "Животные"
+            "title": "Животные",
+            "identifier": "animals"
             },
             {
             "image": "events",
-            "title": "Мероприятие"
+            "title": "Мероприятие",
+            "identifier": "events"
             }
         ]
 }

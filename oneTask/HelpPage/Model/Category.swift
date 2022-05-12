@@ -10,4 +10,5 @@ import Foundation
 struct Category: Codable {
     let image: String
     let title: String
+    let identifier: String
 }
