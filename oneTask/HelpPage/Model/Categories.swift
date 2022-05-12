@@ -10,8 +10,3 @@ import UIKit
 struct Categories: Codable {
     var categories: [Category]
 }
-
-struct Category: Codable {
-    let image: String
-    let title: String
-}

@@ -9,16 +9,11 @@ import UIKit
 
 class CharityEventsDetailView: UIView {
 
-    private let scrollView: UIScrollView = {
-        let scrollView = UIScrollView()
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        return scrollView
-    }()
-
-    private let contentView: UIView = {
-        let view = UIView()
+    private let photoParticipantsView: PhotoParticipantsView = {
+        let view = PhotoParticipantsView()
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.whiteTwo.cgColor
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
         return view
     }()
 
@@ -31,7 +26,7 @@ class CharityEventsDetailView: UIView {
         return stack
     }()
 
-    private let titleLabel: UILabel = {
+    var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(name: "OfficinaSansExtraBoldSCC", size: 21)
@@ -158,15 +153,15 @@ class CharityEventsDetailView: UIView {
         return label
     }()
 
-//    private let emailUsLabel: UILabel = {
-//        let label = UILabel()
-//        label.translatesAutoresizingMaskIntoConstraints = false
-//        label.textColor = .leaf
-//        label.text = "Напишите нам"
-//        label.numberOfLines = 0
-//        label.font = UIFont(name: "SFUIText-Regular", size: 15)
-//        return label
-//    }()
+    //    private let emailUsLabel: UILabel = {
+    //        let label = UILabel()
+    //        label.translatesAutoresizingMaskIntoConstraints = false
+    //        label.textColor = .leaf
+    //        label.text = "Напишите нам"
+    //        label.numberOfLines = 0
+    //        label.font = UIFont(name: "SFUIText-Regular", size: 15)
+    //        return label
+    //    }()
 
     private let photoVerticalStack: UIStackView = {
         let stack = UIStackView()
@@ -240,13 +235,7 @@ class CharityEventsDetailView: UIView {
     }
 
     private func layout() {
-        self.backgroundColor = .white
-
-        [scrollView].forEach({ self.addSubview($0) })
-
-        [contentView].forEach({ scrollView.addSubview($0) })
-
-        [titleVerticalStack, mainPhotoImageView, photoVerticalStack, descriptionLabel].forEach({ contentView.addSubview($0) })
+        [titleVerticalStack, mainPhotoImageView, photoVerticalStack, descriptionLabel, photoParticipantsView].forEach({ self.addSubview($0) })
 
         [calendarImageView, deadlineLabel].forEach({self.deadlineHorizontalStack.addArrangedSubview($0)})
 
@@ -266,34 +255,29 @@ class CharityEventsDetailView: UIView {
         let offset: CGFloat = 20
 
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: self.topAnchor),
-            scrollView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-
-            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-
             titleLabel.heightAnchor.constraint(equalToConstant: 40),
-            titleVerticalStack.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: offset),
-            titleVerticalStack.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: offset),
-            titleVerticalStack.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -offset),
+            titleVerticalStack.topAnchor.constraint(equalTo: self.topAnchor, constant: offset),
+            titleVerticalStack.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: offset),
+            titleVerticalStack.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -offset),
 
             mainPhotoImageView.topAnchor.constraint(equalTo: titleVerticalStack.bottomAnchor, constant: offset),
-            mainPhotoImageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: offset),
+            mainPhotoImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: offset),
             mainPhotoImageView.trailingAnchor.constraint(equalTo: photoVerticalStack.leadingAnchor, constant: -offset),
             mainPhotoImageView.heightAnchor.constraint(equalTo: photoVerticalStack.heightAnchor, multiplier: 1),
 
             photoVerticalStack.topAnchor.constraint(equalTo: titleVerticalStack.bottomAnchor, constant: offset),
             photoVerticalStack.leadingAnchor.constraint(equalTo: mainPhotoImageView.trailingAnchor, constant: offset),
-            photoVerticalStack.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -offset),
+            photoVerticalStack.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -offset),
 
             descriptionLabel.topAnchor.constraint(equalTo: photoVerticalStack.bottomAnchor, constant: offset),
-            descriptionLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: offset),
-            descriptionLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -offset)
+            descriptionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: offset),
+            descriptionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -offset),
+
+            photoParticipantsView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: offset),
+            photoParticipantsView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            photoParticipantsView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            photoParticipantsView.heightAnchor.constraint(equalToConstant: 70),
+            photoParticipantsView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
 }

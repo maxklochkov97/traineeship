@@ -17,4 +17,6 @@ extension UIColor {
     static let warmGreyTwo = UIColor(red: 155/255, green: 155/255, blue: 155/255, alpha: 1)
     static let blueGrey = UIColor(red: 98/255, green: 127/255, blue: 141/255, alpha: 1)
     static let darkSlateBlue = UIColor(red: 22/255, green: 59/255, blue: 79/255, alpha: 1)
+    static let whiteTwo = UIColor(red: 216/255, green: 216/255, blue: 216/255, alpha: 1)
+
 }

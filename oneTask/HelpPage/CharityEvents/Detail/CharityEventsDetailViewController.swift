@@ -8,6 +8,21 @@
 import UIKit
 
 class CharityEventsDetailViewController: UIViewController {
+
+    var navBarTitleLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.textColor = .white
+        label.font = UIFont(name: "OfficinaSansExtraBoldSCC", size: 21)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
     
     var mainView: CharityEventsDetailView = {
         let view = CharityEventsDetailView()
@@ -17,18 +32,72 @@ class CharityEventsDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+        //loadDataFromJSON()
         layout()
     }
-    
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+    }
+
+    private func setupView() {
+        self.view.backgroundColor = .white
+
+        let rightClearButton = UIBarButtonItem(image: UIImage(named: "iconShare"), style: .plain, target: self, action: nil)
+        rightClearButton.tintColor = .white
+        navigationItem.rightBarButtonItem = rightClearButton
+
+        navigationItem.titleView = navBarTitleLabel
+
+        let leftBackButton = UIBarButtonItem(image: UIImage(named: "back"), style: .done, target: self, action: #selector(backToMainAction) )
+        leftBackButton.tintColor = .white
+        self.navigationItem.leftBarButtonItem = leftBackButton
+    }
+
+    @objc func backToMainAction() {
+        self.navigationController?.popViewController(animated: true)
+    }
+
+    /*
+    private func loadDataFromJSON() {
+        guard let path = Bundle.main.path(forResource: "photosParticipants", ofType: "json") else { return }
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            let jsonDate = try Data(contentsOf: url)
+            let currentPhotos = try JSONDecoder().decode(PhotoParticipants.self, from: jsonDate)
+            self.photoParticipants = currentPhotos.photos
+
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+
+        } catch {
+            print(error)
+        }
+    }
+    */
+
     private func layout() {
         
-        [mainView].forEach({ self.view.addSubview($0) })
-        
+        [scrollView].forEach({ view.addSubview($0) })
+        [mainView].forEach({ scrollView.addSubview($0) })
+
         NSLayoutConstraint.activate([
-            mainView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            mainView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            mainView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            mainView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            navBarTitleLabel.heightAnchor.constraint(equalToConstant: 25),
+
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+
+            mainView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            mainView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            mainView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            mainView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            mainView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
         ])
     }
 }

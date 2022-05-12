@@ -52,7 +52,12 @@ class CharityEventsViewController: UIViewController {
         super.viewDidLoad()
         loadDataFromJSON()
         layout()
-        makeBarBottonItem()
+        setupNavBar()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     private func loadDataFromJSON() {
@@ -73,7 +78,7 @@ class CharityEventsViewController: UIViewController {
         }
     }
     
-    private func makeBarBottonItem() {
+    private func setupNavBar() {
         let rightClearButton = UIBarButtonItem(image: UIImage(named: "clear"), style: .plain, target: self, action: nil)
         rightClearButton.tintColor = .white
         navigationItem.rightBarButtonItem = rightClearButton
@@ -121,19 +126,16 @@ extension CharityEventsViewController: UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
         cell.configure(with: eventsModel[indexPath.row])
-        let tapGesture = CustomTapGestureRecognizer(target: self, action: #selector(tapCellAction(event:)))
-        tapGesture.currentEventModel = eventsModel[indexPath.row]
-        cell.addGestureRecognizer(tapGesture)
-        
         return cell
     }
-    
-    @objc private func tapCellAction(event: CustomTapGestureRecognizer) {
-        let newView = CharityEventsDetailViewController()
-        newView.mainView.setupView(event.currentEventModel!)
-        navigationController?.pushViewController(newView, animated: true)
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailVC = CharityEventsDetailViewController()
+        detailVC.navBarTitleLabel.text = eventsModel[indexPath.row].title
+        detailVC.mainView.setupView(eventsModel[indexPath.row])
+        navigationController?.pushViewController(detailVC, animated: true)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         guard let header = collectionView.dequeueReusableSupplementaryView(

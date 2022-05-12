@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F263DA2282D010900A42E8A /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F263DA1282D010900A42E8A /* PhotoCollectionViewCell.swift */; };
+		5F263DA4282D014900A42E8A /* PhotoParticipants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F263DA3282D014900A42E8A /* PhotoParticipants.swift */; };
+		5F263DA6282D06CF00A42E8A /* photosParticipants.json in Resources */ = {isa = PBXBuildFile; fileRef = 5F263DA5282D06CF00A42E8A /* photosParticipants.json */; };
+		5F263DA9282D07D000A42E8A /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F263DA8282D07D000A42E8A /* Category.swift */; };
+		5F263DAC282D08D200A42E8A /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F263DAB282D08D200A42E8A /* Photo.swift */; };
+		5F263DAE282D0E3500A42E8A /* PhotoParticipantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F263DAD282D0E3500A42E8A /* PhotoParticipantsView.swift */; };
 		5F2F826F27E305490067C0E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F826E27E305490067C0E5 /* AppDelegate.swift */; };
 		5F2F827127E305490067C0E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F827027E305490067C0E5 /* SceneDelegate.swift */; };
 		5F2F827327E305490067C0E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F827227E305490067C0E5 /* ViewController.swift */; };
@@ -28,7 +34,7 @@
 		5F76BF55281825030009624B /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F76BF54281825030009624B /* Extension+UIColor.swift */; };
 		5F76BF5728182C970009624B /* HelpCollectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F76BF5628182C970009624B /* HelpCollectionHeader.swift */; };
 		5F76BF5928182F310009624B /* HelpCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F76BF5828182F310009624B /* HelpCollectionViewCell.swift */; };
-		5F76BF5B281831790009624B /* HelpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F76BF5A281831790009624B /* HelpModel.swift */; };
+		5F76BF5B281831790009624B /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F76BF5A281831790009624B /* Categories.swift */; };
 		5F76BF5D281833480009624B /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F76BF5C281833480009624B /* Extension+UIView.swift */; };
 		5F76BF5F281847460009624B /* Officinasansextraboldscc.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F76BF5E281847460009624B /* Officinasansextraboldscc.otf */; };
 		5FD56CB82825146C008F1FCB /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = 5FD56CB72825146C008F1FCB /* events.json */; };
@@ -41,6 +47,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F263DA1282D010900A42E8A /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		5F263DA3282D014900A42E8A /* PhotoParticipants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoParticipants.swift; sourceTree = "<group>"; };
+		5F263DA5282D06CF00A42E8A /* photosParticipants.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = photosParticipants.json; sourceTree = "<group>"; };
+		5F263DA8282D07D000A42E8A /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		5F263DAB282D08D200A42E8A /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		5F263DAD282D0E3500A42E8A /* PhotoParticipantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoParticipantsView.swift; sourceTree = "<group>"; };
 		5F2F826B27E305490067C0E5 /* oneTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = oneTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F2F826E27E305490067C0E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F2F827027E305490067C0E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,7 +77,7 @@
 		5F76BF54281825030009624B /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
 		5F76BF5628182C970009624B /* HelpCollectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCollectionHeader.swift; sourceTree = "<group>"; };
 		5F76BF5828182F310009624B /* HelpCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCollectionViewCell.swift; sourceTree = "<group>"; };
-		5F76BF5A281831790009624B /* HelpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpModel.swift; sourceTree = "<group>"; };
+		5F76BF5A281831790009624B /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		5F76BF5C281833480009624B /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		5F76BF5E281847460009624B /* Officinasansextraboldscc.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Officinasansextraboldscc.otf; sourceTree = "<group>"; };
 		5FD56CB72825146C008F1FCB /* events.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = events.json; sourceTree = "<group>"; };
@@ -98,6 +110,34 @@
 				6D7BE05BE149E6F648E0FA31 /* Pods-oneTask.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		5F263DA0282D00B800A42E8A /* PhotoParticipantsPreview */ = {
+			isa = PBXGroup;
+			children = (
+				5F263DAA282D086400A42E8A /* Model */,
+				5F263DA1282D010900A42E8A /* PhotoCollectionViewCell.swift */,
+				5F263DAD282D0E3500A42E8A /* PhotoParticipantsView.swift */,
+			);
+			path = PhotoParticipantsPreview;
+			sourceTree = "<group>";
+		};
+		5F263DA7282D07B700A42E8A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5F76BF5A281831790009624B /* Categories.swift */,
+				5F263DA8282D07D000A42E8A /* Category.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5F263DAA282D086400A42E8A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5F263DA3282D014900A42E8A /* PhotoParticipants.swift */,
+				5F263DAB282D08D200A42E8A /* Photo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		5F2F826227E305490067C0E5 = {
@@ -175,11 +215,11 @@
 		5F76BF44281823370009624B /* HelpPage */ = {
 			isa = PBXGroup;
 			children = (
+				5F263DA7282D07B700A42E8A /* Model */,
 				5F3CF7D42823F14C00E90DAE /* CharityEvents */,
 				5F76BF45281823590009624B /* HelpViewController.swift */,
 				5F76BF5628182C970009624B /* HelpCollectionHeader.swift */,
 				5F76BF5828182F310009624B /* HelpCollectionViewCell.swift */,
-				5F76BF5A281831790009624B /* HelpModel.swift */,
 			);
 			path = HelpPage;
 			sourceTree = "<group>";
@@ -230,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				5FD56CBA28253037008F1FCB /* category.json */,
+				5F263DA5282D06CF00A42E8A /* photosParticipants.json */,
 				5FD56CB72825146C008F1FCB /* events.json */,
 			);
 			path = JSON;
@@ -238,6 +279,7 @@
 		5FD56CB928252D05008F1FCB /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				5F263DA0282D00B800A42E8A /* PhotoParticipantsPreview */,
 				5FD56CBC2825391A008F1FCB /* CharityEventsDetailViewController.swift */,
 				5FD56CBE28254456008F1FCB /* CharityEventsDetailView.swift */,
 			);
@@ -314,6 +356,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F263DA6282D06CF00A42E8A /* photosParticipants.json in Resources */,
 				5FD56CBB28253037008F1FCB /* category.json in Resources */,
 				5F2F827B27E3054B0067C0E5 /* LaunchScreen.storyboard in Resources */,
 				5F76BF5F281847460009624B /* Officinasansextraboldscc.otf in Resources */,
@@ -400,15 +443,20 @@
 				5FD56CBF28254456008F1FCB /* CharityEventsDetailView.swift in Sources */,
 				5F76BF5928182F310009624B /* HelpCollectionViewCell.swift in Sources */,
 				5F76BF502818243D0009624B /* SearchViewController.swift in Sources */,
+				5F263DA9282D07D000A42E8A /* Category.swift in Sources */,
 				5F76BF40281810DC0009624B /* MainTabBarController.swift in Sources */,
-				5F76BF5B281831790009624B /* HelpModel.swift in Sources */,
+				5F76BF5B281831790009624B /* Categories.swift in Sources */,
+				5F263DAE282D0E3500A42E8A /* PhotoParticipantsView.swift in Sources */,
 				5F2F826F27E305490067C0E5 /* AppDelegate.swift in Sources */,
 				5FD56CC528255E7B008F1FCB /* CustomTapGestureRecognizer.swift in Sources */,
 				5FD56CBD2825391A008F1FCB /* CharityEventsDetailViewController.swift in Sources */,
 				5F2F827127E305490067C0E5 /* SceneDelegate.swift in Sources */,
+				5F263DAC282D08D200A42E8A /* Photo.swift in Sources */,
 				5F3CF7D62823F19800E90DAE /* CharityEventsViewController.swift in Sources */,
 				5F76BF522818244B0009624B /* NewsViewController.swift in Sources */,
+				5F263DA2282D010900A42E8A /* PhotoCollectionViewCell.swift in Sources */,
 				5F76BF55281825030009624B /* Extension+UIColor.swift in Sources */,
+				5F263DA4282D014900A42E8A /* PhotoParticipants.swift in Sources */,
 				5F3CF7DA2823F2BC00E90DAE /* CharityEventsHeaderView.swift in Sources */,
 				5F76BF4E2818242E0009624B /* HistoryViewController.swift in Sources */,
 				5F3CF7D82823F1C900E90DAE /* CharityEventsCollectionViewCell.swift in Sources */,
