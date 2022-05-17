@@ -47,15 +47,13 @@ class HelpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //loadDataFromJSON()
-        //loadAndUpdateData()
         loadDateFromLocalJSON()
         setupNavBar()
         layout()
     }
 
-    func loadDateFromLocalJSON() {
-        dataManager.fetchData2(forPath: dataManager.pathCategory, to: &date) { [weak self] answer in
+    private func loadDateFromLocalJSON() {
+        dataManager.fetchData(forPath: dataManager.pathCategory, to: &date) { [weak self] answer in
             switch answer {
             case .success(let data):
                 guard let data = data else { return }
@@ -71,8 +69,8 @@ class HelpViewController: UIViewController {
     }
 
     private func addAlert(error: String) {
-        let alert = UIAlertController(title: "Server unavailable!", message: error, preferredStyle: .alert)
-        let okAlert = UIAlertAction(title: "Reload", style: .default) { _ in
+        let alert = UIAlertController(title: "Ошибка загрузки данных", message: error, preferredStyle: .alert)
+        let okAlert = UIAlertAction(title: "Повторить", style: .default) { _ in
             self.dismiss(animated: true)
             self.loadDateFromLocalJSON()
         }
@@ -80,35 +78,7 @@ class HelpViewController: UIViewController {
         present(alert, animated: true)
     }
 
-    private func loadAndUpdateData() {
-        dataManager.fetchData(forPath: dataManager.pathCategory, to: &date)
-        guard let date = date else { return }
-        allCategories = date.categories
-
-        DispatchQueue.main.async {
-            self.collectionView.reloadData()
-        }
-    }
-
-    private func loadDataFromJSON() {
-        guard let path = Bundle.main.path(forResource: "category", ofType: "json") else { return }
-        let url = URL(fileURLWithPath: path)
-
-        do {
-            let jsonDate = try Data(contentsOf: url)
-            let currentCategories = try JSONDecoder().decode(Categories.self, from: jsonDate)
-            self.allCategories = currentCategories.categories
-
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
-
-        } catch {
-            print("Error == \(error.localizedDescription)")
-        }
-    }
-
-    @objc private func tabButton() {
+    @objc private func tabBackButton() {
         UIControl().sendAction(#selector(NSXPCConnection.suspend),
                                to: UIApplication.shared, for: nil)
     }
@@ -123,7 +93,7 @@ class HelpViewController: UIViewController {
         self.navigationController?.navigationBar.standardAppearance = navBarAppearance
         self.navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
 
-        let leftBackButton = UIBarButtonItem(image: UIImage(named: "back"), style: .done, target: self, action: #selector(tabButton))
+        let leftBackButton = UIBarButtonItem(image: UIImage(named: "back"), style: .done, target: self, action: #selector(tabBackButton))
         leftBackButton.tintColor = .white
         self.navigationItem.leftBarButtonItem = leftBackButton
     }

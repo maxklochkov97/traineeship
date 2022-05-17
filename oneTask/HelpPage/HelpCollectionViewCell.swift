@@ -10,6 +10,7 @@ import UIKit
 class HelpCollectionViewCell: UICollectionViewCell {
 
     weak var tapCellDelegate: TapHelpCollectionViewCellDelegate?
+    var identifier = ""
 
     private var imageView: UIImageView = {
         let imageView = UIImageView()
@@ -45,6 +46,7 @@ class HelpCollectionViewCell: UICollectionViewCell {
     public func configure(with page: Category) {
         self.imageView.image = UIImage(named: page.image)
         self.headerLabel.text = page.title
+        self.identifier = page.identifier
         self.contentView.backgroundColor = .lightGreyTwo
     }
 

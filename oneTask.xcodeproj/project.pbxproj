@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5F1A9D0D2833CC9A004A8798 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1A9D0C2833CC9A004A8798 /* ApiResponse.swift */; };
-		5F1A9D0F2833D2A4004A8798 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1A9D0E2833D2A4004A8798 /* Route.swift */; };
 		5F263DA2282D010900A42E8A /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F263DA1282D010900A42E8A /* PhotoCollectionViewCell.swift */; };
 		5F263DA4282D014900A42E8A /* PhotoParticipants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F263DA3282D014900A42E8A /* PhotoParticipants.swift */; };
 		5F263DA6282D06CF00A42E8A /* photosParticipants.json in Resources */ = {isa = PBXBuildFile; fileRef = 5F263DA5282D06CF00A42E8A /* photosParticipants.json */; };
@@ -51,8 +49,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5F1A9D0C2833CC9A004A8798 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
-		5F1A9D0E2833D2A4004A8798 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		5F263DA1282D010900A42E8A /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		5F263DA3282D014900A42E8A /* PhotoParticipants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoParticipants.swift; sourceTree = "<group>"; };
 		5F263DA5282D06CF00A42E8A /* photosParticipants.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = photosParticipants.json; sourceTree = "<group>"; };
@@ -297,8 +293,6 @@
 				5F263DA5282D06CF00A42E8A /* photosParticipants.json */,
 				5FD56CB72825146C008F1FCB /* events.json */,
 				5F263DB2282D5E6B00A42E8A /* JSONManager.swift */,
-				5F1A9D0C2833CC9A004A8798 /* ApiResponse.swift */,
-				5F1A9D0E2833D2A4004A8798 /* Route.swift */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -467,7 +461,6 @@
 				5F263DB1282D421F00A42E8A /* AdditionalButtonsView.swift in Sources */,
 				5F76BF5728182C970009624B /* HelpCollectionHeader.swift in Sources */,
 				5F2F827327E305490067C0E5 /* ViewController.swift in Sources */,
-				5F1A9D0D2833CC9A004A8798 /* ApiResponse.swift in Sources */,
 				5FD56CC128254B68008F1FCB /* Extension+UILabel.swift in Sources */,
 				5F3CF7DC2823F68A00E90DAE /* Events.swift in Sources */,
 				5FD56CBF28254456008F1FCB /* CharityEventsDetailView.swift in Sources */,
@@ -483,7 +476,6 @@
 				5F2F827127E305490067C0E5 /* SceneDelegate.swift in Sources */,
 				5F263DAC282D08D200A42E8A /* Photo.swift in Sources */,
 				5F3CF7D62823F19800E90DAE /* CharityEventsViewController.swift in Sources */,
-				5F1A9D0F2833D2A4004A8798 /* Route.swift in Sources */,
 				5F76BF522818244B0009624B /* NewsViewController.swift in Sources */,
 				5F263DA2282D010900A42E8A /* PhotoCollectionViewCell.swift in Sources */,
 				5F76BF55281825030009624B /* Extension+UIColor.swift in Sources */,
