@@ -9,6 +9,10 @@ import UIKit
 
 class HelpViewController: UIViewController {
 
+    private var dataManager = LocalDataManager()
+    private var date: Categories?
+    private var allCategories = [Category]()
+
     private let layoutCol: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -41,13 +45,49 @@ class HelpViewController: UIViewController {
         return collectionView
     }()
 
-    private var allCategories = [Category]()
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadDataFromJSON()
+        //loadDataFromJSON()
+        //loadAndUpdateData()
+        loadDateFromLocalJSON()
         setupNavBar()
         layout()
+    }
+
+    func loadDateFromLocalJSON() {
+        dataManager.fetchData2(forPath: dataManager.pathCategory, to: &date) { [weak self] answer in
+            switch answer {
+            case .success(let data):
+                guard let data = data else { return }
+                self?.allCategories = data.categories
+            case.failure(let error):
+                self?.addAlert(error: error.localizedDescription)
+            }
+
+            DispatchQueue.main.async {
+                self?.collectionView.reloadData()
+            }
+        }
+    }
+
+    private func addAlert(error: String) {
+        let alert = UIAlertController(title: "Server unavailable!", message: error, preferredStyle: .alert)
+        let okAlert = UIAlertAction(title: "Reload", style: .default) { _ in
+            self.dismiss(animated: true)
+            self.loadDateFromLocalJSON()
+        }
+        alert.addAction(okAlert)
+        present(alert, animated: true)
+    }
+
+    private func loadAndUpdateData() {
+        dataManager.fetchData(forPath: dataManager.pathCategory, to: &date)
+        guard let date = date else { return }
+        allCategories = date.categories
+
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
     }
 
     private func loadDataFromJSON() {
@@ -64,7 +104,7 @@ class HelpViewController: UIViewController {
             }
 
         } catch {
-            print(error)
+            print("Error == \(error.localizedDescription)")
         }
     }
 
