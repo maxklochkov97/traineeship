@@ -23,3 +23,21 @@
 "ProfHelp" = "Проф.\nпомощь";
 "HelpWithMoney" = "Помочь\nденьгами";
 
+"filterNavTitle" = "Фильтр";
+"filterHeaderText" = "Как вы хотите помочь?";
+
+"alertHeaderText" = "Ошибка загрузки данных";
+"alertOkText" = "Повторить";
+
+"mailLabelText" = "У вас есть вопросы? Напишите нам";
+"mailLabelTextSecond" = "Напишите нам";
+"onTheSiteLabelText" = "Перейти на сайт организации";
+
+"howToHelpMoney" = "Деньгами";
+"howToHelpThing" = "Вещами";
+
+//NSLocalizedString("alertOkText", comment: "")
+
+
+
+

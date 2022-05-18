@@ -69,8 +69,8 @@ class HelpViewController: UIViewController {
     }
 
     private func addAlert(error: String) {
-        let alert = UIAlertController(title: "Ошибка загрузки данных", message: error, preferredStyle: .alert)
-        let okAlert = UIAlertAction(title: "Повторить", style: .default) { _ in
+        let alert = UIAlertController(title: NSLocalizedString("alertHeaderText", comment: ""), message: error, preferredStyle: .alert)
+        let okAlert = UIAlertAction(title: NSLocalizedString("alertOkText", comment: ""), style: .default) { _ in
             self.dismiss(animated: true)
             self.loadDateFromLocalJSON()
         }
@@ -130,15 +130,12 @@ extension HelpViewController: UICollectionViewDataSource {
         }
 
         cell.configure(with: allCategories[indexPath.row])
-
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapCellAction))
-        cell.addGestureRecognizer(tapGesture)
-        
         return cell
     }
 
-    @objc private func tapCellAction() {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let newView = CharityEventsViewController()
+        newView.setupView(allCategories[indexPath.row])
         navigationController?.pushViewController(newView, animated: true)
     }
 

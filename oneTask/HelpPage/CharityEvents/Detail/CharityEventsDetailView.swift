@@ -145,21 +145,11 @@ class CharityEventsDetailView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .charcoalGrey
-        label.text = "У вас есть вопросы? Напишите нам"
+        label.text = NSLocalizedString("mailLabelText", comment: "")
         label.numberOfLines = 2
         label.font = UIFont(name: "SFUIText-Regular", size: 15)
         return label
     }()
-
-    //    private let emailUsLabel: UILabel = {
-    //        let label = UILabel()
-    //        label.translatesAutoresizingMaskIntoConstraints = false
-    //        label.textColor = .leaf
-    //        label.text = "Напишите нам"
-    //        label.numberOfLines = 0
-    //        label.font = UIFont(name: "SFUIText-Regular", size: 15)
-    //        return label
-    //    }()
 
     private let photoVerticalStack: UIStackView = {
         let stack = UIStackView()
@@ -206,6 +196,7 @@ class CharityEventsDetailView: UIView {
     private let onTheSiteLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = NSLocalizedString("onTheSiteLabelText", comment: "")
         label.textColor = .leaf
         label.font = UIFont(name: "SFUIText-Regular", size: 15)
         return label
@@ -214,6 +205,7 @@ class CharityEventsDetailView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         layout()
+        addUnderlineLabel()
     }
 
     required init?(coder: NSCoder) {
@@ -232,8 +224,34 @@ class CharityEventsDetailView: UIView {
         self.descriptionLabel.text = model.additionalDescription
     }
 
+    private func addUnderlineLabel() {
+        guard let textOnSite = onTheSiteLabel.text else { return }
+        let textRangeOnSite = NSRange(location: 0, length: textOnSite.count)
+        let attributedOnSiteText = NSMutableAttributedString(string: textOnSite)
+        attributedOnSiteText.addAttribute(.underlineStyle,
+                                            value: NSUnderlineStyle.single.rawValue,
+                                            range: textRangeOnSite)
+        self.onTheSiteLabel.attributedText = attributedOnSiteText
+
+        guard let textMail = mailLabel.text else { return }
+        let string = NSLocalizedString("mailLabelTextSecond", comment: "")
+        let rangeTextMail = (textMail as NSString).range(of: string)
+
+        let attributedMailText = NSMutableAttributedString(string: textMail)
+        attributedMailText.addAttribute(.underlineStyle,
+                                        value: NSUnderlineStyle.single.rawValue,
+                                        range: rangeTextMail)
+
+        attributedMailText.addAttribute(NSAttributedString.Key.foregroundColor,
+                                        value: UIColor.leaf,
+                                        range: rangeTextMail)
+
+        self.mailLabel.attributedText = attributedMailText
+    }
+
     private func layout() {
-        [titleVerticalStack, mainPhotoImageView, photoVerticalStack, descriptionLabel, photoParticipantsView].forEach({ self.addSubview($0) })
+        [titleVerticalStack, mainPhotoImageView, photoVerticalStack,
+         descriptionLabel, onTheSiteLabel, photoParticipantsView].forEach({ self.addSubview($0) })
 
         [calendarImageView, deadlineLabel].forEach({self.deadlineHorizontalStack.addArrangedSubview($0)})
 
@@ -271,7 +289,11 @@ class CharityEventsDetailView: UIView {
             descriptionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: offset),
             descriptionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -offset),
 
-            photoParticipantsView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: offset),
+            onTheSiteLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: offset),
+            onTheSiteLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: offset),
+            onTheSiteLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -offset),
+
+            photoParticipantsView.topAnchor.constraint(equalTo: onTheSiteLabel.bottomAnchor, constant: offset),
             photoParticipantsView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             photoParticipantsView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             photoParticipantsView.heightAnchor.constraint(equalToConstant: 72),

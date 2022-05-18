@@ -18,6 +18,8 @@ struct CharityEvents: Codable {
     var fond: String
     var address: String
     var additionalDescription: String
+    var identifierCategory: String
+    var identifierFilter: [String]
 
     private enum CodingKeys: String, CodingKey {
         case image
@@ -30,5 +32,7 @@ struct CharityEvents: Codable {
         case fond
         case address
         case additionalDescription = "additional_description"
+        case identifierCategory = "identifier_category"
+        case identifierFilter = "identifier_filter"
     }
 }

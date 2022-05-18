@@ -8,8 +8,15 @@
 import UIKit
 
 class CharityEventsViewController: UIViewController {
-    
-    private let navBarTitleLabel: UILabel = {
+
+    private var filterSettings = FilterViewController()
+
+    private var eventsModel = [CharityEvents]()
+    private var dataManager = LocalDataManager()
+    private var date: Events?
+    private var identifierCategory = ""
+
+    var navBarTitleLabel: UILabel = {
         let label = UILabel()
         label.text = NSLocalizedString("childrenNavTitle", comment: "")
         label.textAlignment = .center
@@ -18,10 +25,7 @@ class CharityEventsViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
-    private var eventsModel = [CharityEvents]()
-    private var currentEventModel: CharityEvents?
-    
+
     private let layoutCol: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -51,7 +55,7 @@ class CharityEventsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-        loadDataFromJSON()
+        loadDateFromLocalJSON()
         layout()
         setupNavBar()
     }
@@ -60,39 +64,63 @@ class CharityEventsViewController: UIViewController {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
     }
-    
-    private func loadDataFromJSON() {
-        guard let path = Bundle.main.path(forResource: "events", ofType: "json") else { return }
-        let url = URL(fileURLWithPath: path)
-        
-        do {
-            let jsonDate = try Data(contentsOf: url)
-            let currentEvents = try JSONDecoder().decode(Events.self, from: jsonDate)
-            self.eventsModel = currentEvents.events
-            
-            DispatchQueue.main.async {
-                self.charityEventsCollectionView.reloadData()
+
+    private func loadDateFromLocalJSON() {
+        dataManager.fetchData(forPath: dataManager.pathEvents, to: &date) { [weak self] answer in
+            switch answer {
+            case .success(let data):
+                guard let data = data else { return }
+
+                var filterModel = [CharityEvents]()
+                for event in data.events where event.identifierCategory == self?.identifierCategory {
+                    filterModel.append(event)
+                }
+
+                self?.eventsModel = filterModel
+            case.failure(let error):
+                self?.addAlert(error: error.localizedDescription)
             }
-            
-        } catch {
-            print(error)
+
+            DispatchQueue.main.async {
+                self?.charityEventsCollectionView.reloadData()
+            }
         }
+    }
+
+    private func addAlert(error: String) {
+        let alert = UIAlertController(title: "Ошибка загрузки данных", message: error, preferredStyle: .alert)
+        let okAlert = UIAlertAction(title: "Повторить", style: .default) { _ in
+            self.dismiss(animated: true)
+            self.loadDateFromLocalJSON()
+        }
+        alert.addAction(okAlert)
+        present(alert, animated: true)
     }
     
     private func setupNavBar() {
-        let rightClearButton = UIBarButtonItem(image: UIImage(named: "clear"), style: .plain, target: self, action: nil)
-        rightClearButton.tintColor = .white
-        navigationItem.rightBarButtonItem = rightClearButton
+        let rightFilterButton = UIBarButtonItem(image: UIImage(named: "filter"), style: .plain, target: self, action: #selector(tabFilterButton))
+        rightFilterButton.tintColor = .white
+        navigationItem.rightBarButtonItem = rightFilterButton
         
         navigationItem.titleView = navBarTitleLabel
         
-        let leftBackButton = UIBarButtonItem(image: UIImage(named: "back"), style: .done, target: self, action: #selector(backToMainAction) )
+        let leftBackButton = UIBarButtonItem(image: UIImage(named: "back"), style: .done, target: self, action: #selector(tabBackButton) )
         leftBackButton.tintColor = .white
         self.navigationItem.leftBarButtonItem = leftBackButton
     }
+
+    func setupView(_ category: Category) {
+        self.identifierCategory = category.identifier
+        self.navBarTitleLabel.text = category.title
+    }
     
-    @objc func backToMainAction() {
+    @objc private func tabBackButton() {
         self.navigationController?.popViewController(animated: true)
+    }
+
+    @objc private func tabFilterButton() {
+        filterSettings.filterEventsModelDelegate = self
+        navigationController?.pushViewController(filterSettings, animated: true)
     }
     
     private func layout() {
@@ -172,5 +200,23 @@ extension CharityEventsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         sideInset
+    }
+}
+
+extension CharityEventsViewController: FilterEventsModelDelegate {
+    func filterEventsModel(_ identifierFilter: [String]) {
+        
+        var filterModel = [CharityEvents]()
+        loadDateFromLocalJSON()
+
+        for event in eventsModel where event.identifierFilter.allSatisfy(identifierFilter.contains) {
+            filterModel.append(event)
+        }
+
+        self.eventsModel = filterModel
+
+        DispatchQueue.main.async {
+            self.charityEventsCollectionView.reloadData()
+        }
     }
 }

@@ -7,10 +7,6 @@
 
 import Foundation
 
-//struct Events: Codable {
-//    var events: [CharityEvents]
-//}
-
 struct Events: Codable {
     var events: [CharityEvents]
 }
