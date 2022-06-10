@@ -19,12 +19,25 @@ class HelpCollectionHeader: UICollectionReusableView {
         return label
     }()
 
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        layout()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     public func configure() {
         addSubview(headerLabel)
     }
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        headerLabel.frame = bounds
+    private func layout() {
+        [headerLabel].forEach({ self.addSubview($0)})
+
+        NSLayoutConstraint.activate([
+            headerLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            headerLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
+        ])
     }
 }

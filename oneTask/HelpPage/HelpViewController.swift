@@ -9,6 +9,10 @@ import UIKit
 
 class HelpViewController: UIViewController {
 
+    private var dataManager = LocalDataManager()
+    private var date: Categories?
+    private var allCategories = [Category]()
+
     private let layoutCol: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -41,28 +45,40 @@ class HelpViewController: UIViewController {
         return collectionView
     }()
 
-    private let allPages = [
-        Page(imageName: "сhildren", headerText: "Дети"),
-        Page(imageName: "adults", headerText: "Взрослые"),
-        Page(imageName: "theElderly", headerText: "Пожилые"),
-        Page(imageName: "animals", headerText: "Животные"),
-        Page(imageName: "events", headerText: "Мероприятия")
-    ]
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        addBackButtonNavBar()
+        loadDateFromLocalJSON()
         setupNavBar()
         layout()
     }
 
-    private func addBackButtonNavBar() {
-        let addButton = UIBarButtonItem(image: UIImage(named: "back"), style: .done, target: self, action: #selector(tabButton))
-        self.navigationItem.leftBarButtonItem = addButton
-        self.navigationItem.leftBarButtonItem?.tintColor = .white
+    private func loadDateFromLocalJSON() {
+        dataManager.fetchData(forPath: dataManager.pathCategory, to: &date) { [weak self] answer in
+            switch answer {
+            case .success(let data):
+                guard let data = data else { return }
+                self?.allCategories = data.categories
+            case.failure(let error):
+                self?.addAlert(error: error.localizedDescription)
+            }
+
+            DispatchQueue.main.async {
+                self?.collectionView.reloadData()
+            }
+        }
     }
 
-    @objc private func tabButton() {
+    private func addAlert(error: String) {
+        let alert = UIAlertController(title: NSLocalizedString("alertHeaderText", comment: ""), message: error, preferredStyle: .alert)
+        let okAlert = UIAlertAction(title: NSLocalizedString("alertOkText", comment: ""), style: .default) { _ in
+            self.dismiss(animated: true)
+            self.loadDateFromLocalJSON()
+        }
+        alert.addAction(okAlert)
+        present(alert, animated: true)
+    }
+
+    @objc private func tabBackButton() {
         UIControl().sendAction(#selector(NSXPCConnection.suspend),
                                to: UIApplication.shared, for: nil)
     }
@@ -76,6 +92,10 @@ class HelpViewController: UIViewController {
 
         self.navigationController?.navigationBar.standardAppearance = navBarAppearance
         self.navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+
+        let leftBackButton = UIBarButtonItem(image: UIImage(named: "back"), style: .done, target: self, action: #selector(tabBackButton))
+        leftBackButton.tintColor = .white
+        self.navigationItem.leftBarButtonItem = leftBackButton
     }
 
     private func layout() {
@@ -98,7 +118,7 @@ class HelpViewController: UIViewController {
 extension HelpViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return allPages.count
+        return allCategories.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -109,8 +129,14 @@ extension HelpViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
 
-        cell.configure(with: allPages[indexPath.row])
+        cell.configure(with: allCategories[indexPath.row])
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let newView = CharityEventsViewController()
+        newView.setupView(allCategories[indexPath.row])
+        navigationController?.pushViewController(newView, animated: true)
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

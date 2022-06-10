@@ -7,9 +7,37 @@
 */
 
 "helpPageHeaderText" = "Выберите категорию помощи";
+
 "newsVC" = "Новости";
 "searchVC" = "Поиск";
 "helpVC" = "Помочь";
 "historyVC" = "История";
 "profileVC" = "Профиль";
+
+"childrenNavTitle" = "Дети";
+"сhildrenCurrentButton" = "Текущие";
+"сhildrenCompletedButton" = "Завершенные";
+
+"HelpWithThings" = "Помочь вещами";
+"BecomeAVolunteer" = "Стать\nволонтером";
+"ProfHelp" = "Проф.\nпомощь";
+"HelpWithMoney" = "Помочь\nденьгами";
+
+"filterNavTitle" = "Фильтр";
+"filterHeaderText" = "Как вы хотите помочь?";
+
+"alertHeaderText" = "Ошибка загрузки данных";
+"alertOkText" = "Повторить";
+
+"mailLabelText" = "У вас есть вопросы? Напишите нам";
+"mailLabelTextSecond" = "Напишите нам";
+"onTheSiteLabelText" = "Перейти на сайт организации";
+
+"howToHelpMoney" = "Деньгами";
+"howToHelpThing" = "Вещами";
+
+//NSLocalizedString("alertOkText", comment: "")
+
+
+
 

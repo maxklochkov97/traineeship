@@ -1,0 +1,29 @@
+{
+    "categories": [
+            {
+            "image": "сhildren",
+            "title": "Дети",
+            "identifier": "сhildren"
+            },
+            {
+            "image": "adults",
+            "title": "Взрослые",
+            "identifier": "adults"
+            },
+            {
+            "image": "theElderly",
+            "title": "Пожилые",
+            "identifier": "theElderly"
+            },
+            {
+            "image": "animals",
+            "title": "Животные",
+            "identifier": "animals"
+            },
+            {
+            "image": "events",
+            "title": "Мероприятие",
+            "identifier": "events"
+            }
+        ]
+}

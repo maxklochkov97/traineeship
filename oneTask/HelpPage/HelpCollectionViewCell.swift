@@ -9,6 +9,9 @@ import UIKit
 
 class HelpCollectionViewCell: UICollectionViewCell {
 
+    weak var tapCellDelegate: TapHelpCollectionViewCellDelegate?
+    var identifier = ""
+
     private var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.frame = .zero
@@ -36,9 +39,14 @@ class HelpCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    public func configure(with page: Page) {
-        self.imageView.image = UIImage(named: page.imageName)
-        self.headerLabel.text = page.headerText
+    @objc private func photoAction() {
+        tapCellDelegate?.tapCellAction()
+    }
+
+    public func configure(with page: Category) {
+        self.imageView.image = UIImage(named: page.image)
+        self.headerLabel.text = page.title
+        self.identifier = page.identifier
         self.contentView.backgroundColor = .lightGreyTwo
     }
 

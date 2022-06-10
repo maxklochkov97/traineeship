@@ -7,7 +7,6 @@
 
 import UIKit
 
-struct Page {
-    let imageName: String
-    let headerText: String
+struct Categories: Codable {
+    var categories: [Category]
 }
