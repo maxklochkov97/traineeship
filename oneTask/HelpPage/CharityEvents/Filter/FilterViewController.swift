@@ -25,6 +25,7 @@ class FilterViewController: UIViewController {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = .white
+        label.text = NSLocalizedString("filterNavTitle", comment: "")
         label.font = UIFont(name: "OfficinaSansExtraBoldSCC", size: 21)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

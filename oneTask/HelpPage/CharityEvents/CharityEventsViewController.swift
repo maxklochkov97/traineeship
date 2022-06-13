@@ -10,11 +10,11 @@ import UIKit
 class CharityEventsViewController: UIViewController {
 
     private var filterSettings = FilterViewController()
-
     private var eventsModel = [CharityEvents]()
     private var dataManager = LocalDataManager()
     private var date: Events?
     private var identifierCategory = ""
+    private let activityIndicator = UIActivityIndicatorView()
 
     var navBarTitleLabel: UILabel = {
         let label = UILabel()
@@ -66,6 +66,8 @@ class CharityEventsViewController: UIViewController {
     }
 
     private func loadDateFromLocalJSON() {
+        self.activityIndicator.startAnimating()
+
         dataManager.fetchData(forPath: dataManager.pathEvents, to: &date) { [weak self] answer in
             switch answer {
             case .success(let data):
@@ -76,13 +78,17 @@ class CharityEventsViewController: UIViewController {
                     filterModel.append(event)
                 }
 
-                self?.eventsModel = filterModel
-            case.failure(let error):
-                self?.addAlert(error: error.localizedDescription)
-            }
+                DispatchQueue.main.async {
+                    self?.activityIndicator.stopAnimating()
+                    self?.eventsModel = filterModel
+                    self?.charityEventsCollectionView.reloadData()
+                }
 
-            DispatchQueue.main.async {
-                self?.charityEventsCollectionView.reloadData()
+            case.failure(let error):
+                DispatchQueue.main.async {
+                    self?.activityIndicator.stopAnimating()
+                    self?.addAlert(error: error.localizedDescription)
+                }
             }
         }
     }
@@ -124,8 +130,9 @@ class CharityEventsViewController: UIViewController {
     }
     
     private func layout() {
-        [charityEventsCollectionView].forEach({ self.view.addSubview($0)})
-        
+        activityIndicator.center = view.center
+        [charityEventsCollectionView, activityIndicator].forEach({ self.view.addSubview($0)})
+
         let offset: CGFloat = 0
         
         NSLayoutConstraint.activate([
@@ -205,18 +212,37 @@ extension CharityEventsViewController: UICollectionViewDelegateFlowLayout {
 
 extension CharityEventsViewController: FilterEventsModelDelegate {
     func filterEventsModel(_ identifierFilter: [String]) {
-        
-        var filterModel = [CharityEvents]()
-        loadDateFromLocalJSON()
+        eventsModel = [CharityEvents]()
+        charityEventsCollectionView.reloadData()
 
-        for event in eventsModel where event.identifierFilter.allSatisfy(identifierFilter.contains) {
-            filterModel.append(event)
-        }
+        self.activityIndicator.startAnimating()
 
-        self.eventsModel = filterModel
+        DispatchQueue.global(qos: .background).async {
+            self.dataManager.fetchData(forPath: self.dataManager.pathEvents, to: &self.date) { [weak self] answer in
+                switch answer {
+                case .success(let data):
+                    guard let data = data else { return }
 
-        DispatchQueue.main.async {
-            self.charityEventsCollectionView.reloadData()
+                    var filterModel = [CharityEvents]()
+                    for event in data.events where
+                    event.identifierCategory == self?.identifierCategory &&
+                    event.identifierFilter.allSatisfy(identifierFilter.contains) {
+                        filterModel.append(event)
+                    }
+
+                    DispatchQueue.main.async {
+                        self?.activityIndicator.stopAnimating()
+                        self?.eventsModel = filterModel
+                        self?.charityEventsCollectionView.reloadData()
+                    }
+
+                case.failure(let error):
+                    DispatchQueue.main.async {
+                        self?.activityIndicator.stopAnimating()
+                        self?.addAlert(error: error.localizedDescription)
+                    }
+                }
+            }
         }
     }
 }
