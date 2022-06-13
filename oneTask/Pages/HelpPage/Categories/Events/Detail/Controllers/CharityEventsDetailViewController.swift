@@ -9,8 +9,8 @@ import UIKit
 
 class CharityEventsDetailViewController: UIViewController {
 
-    private var dataManager = LocalDataManager()
     private var date: PhotoParticipants?
+    private let activityIndicator = UIActivityIndicatorView()
 
     var navBarTitleLabel: UILabel = {
         let label = UILabel()
@@ -52,28 +52,36 @@ class CharityEventsDetailViewController: UIViewController {
     }
 
     private func loadDateFromLocalJSON() {
-        dataManager.fetchData(forPath: dataManager.pathPhotosParticipants, to: &date) { [weak self] answer in
+        scrollView.isHidden = true
+        activityIndicator.startAnimating()
+
+        LocalDataManager.fetchData(forPath: LocalDataManager.pathPhotosParticipants, to: date) { [weak self] answer in
             switch answer {
             case .success(let data):
                 guard let data = data else { return }
                 DispatchQueue.main.async {
                     self?.mainView.photoParticipantsView.configure(with: data.photos)
+                    self?.activityIndicator.stopAnimating()
+                    self?.scrollView.isHidden = false
                 }
             case.failure(let error):
                 DispatchQueue.main.async {
                     self?.addAlert(error: error.localizedDescription)
+                    self?.activityIndicator.stopAnimating()
+                    self?.scrollView.isHidden = false
                 }
             }
         }
     }
 
     private func addAlert(error: String) {
-        let alert = UIAlertController(title: "Ошибка загрузки данных", message: error, preferredStyle: .alert)
-        let okAlert = UIAlertAction(title: "Повторить", style: .default) { _ in
+        let alert = UIAlertController(title: NSLocalizedString("alertHeaderText", comment: ""), message: error, preferredStyle: .alert)
+        let okAlert = UIAlertAction(title: NSLocalizedString("alertOkText", comment: ""), style: .default) { _ in
             self.dismiss(animated: true)
             self.loadDateFromLocalJSON()
         }
-        alert.addAction(okAlert)
+        let cancelAlert = UIAlertAction(title: NSLocalizedString("alertCancelText", comment: ""), style: .destructive)
+        [cancelAlert, okAlert].forEach({ alert.addAction($0) })
         present(alert, animated: true)
     }
 
@@ -96,8 +104,8 @@ class CharityEventsDetailViewController: UIViewController {
     }
 
     private func layout() {
-        
-        [scrollView, additionalButtonsView].forEach({ view.addSubview($0) })
+        activityIndicator.center = view.center
+        [scrollView, additionalButtonsView, activityIndicator].forEach({ view.addSubview($0) })
         [mainView].forEach({ scrollView.addSubview($0) })
 
         NSLayoutConstraint.activate([

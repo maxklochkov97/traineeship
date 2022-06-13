@@ -23,7 +23,6 @@
 		5F3CF7D82823F1C900E90DAE /* CharityEventsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3CF7D72823F1C900E90DAE /* CharityEventsCollectionViewCell.swift */; };
 		5F3CF7DA2823F2BC00E90DAE /* CharityEventsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3CF7D92823F2BC00E90DAE /* CharityEventsHeaderView.swift */; };
 		5F3CF7DC2823F68A00E90DAE /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3CF7DB2823F68A00E90DAE /* Events.swift */; };
-		5F3CF7DF282402F000E90DAE /* TapHelpCollectionViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3CF7DE282402F000E90DAE /* TapHelpCollectionViewCellDelegate.swift */; };
 		5F5AA1FA281FF3A700E851E4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5F5AA1FC281FF3A700E851E4 /* Localizable.strings */; };
 		5F6F58F62834EEE100141327 /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F58F52834EEE100141327 /* FilterTableViewCell.swift */; };
 		5F6F58F82834EEF800141327 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F58F72834EEF800141327 /* FilterViewController.swift */; };
@@ -72,7 +71,6 @@
 		5F3CF7D72823F1C900E90DAE /* CharityEventsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityEventsCollectionViewCell.swift; sourceTree = "<group>"; };
 		5F3CF7D92823F2BC00E90DAE /* CharityEventsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityEventsHeaderView.swift; sourceTree = "<group>"; };
 		5F3CF7DB2823F68A00E90DAE /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
-		5F3CF7DE282402F000E90DAE /* TapHelpCollectionViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapHelpCollectionViewCellDelegate.swift; sourceTree = "<group>"; };
 		5F5AA1F7281FF38200E851E4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		5F5AA1FB281FF3A700E851E4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5F6F58F52834EEE100141327 /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
@@ -126,16 +124,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		5F263DA0282D00B800A42E8A /* PhotoParticipantsPreview */ = {
-			isa = PBXGroup;
-			children = (
-				5F263DAA282D086400A42E8A /* Model */,
-				5F263DA1282D010900A42E8A /* PhotoCollectionViewCell.swift */,
-				5F263DAD282D0E3500A42E8A /* PhotoParticipantsView.swift */,
-			);
-			path = PhotoParticipantsPreview;
-			sourceTree = "<group>";
-		};
 		5F263DA7282D07B700A42E8A /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,21 +133,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		5F263DAA282D086400A42E8A /* Model */ = {
+		5F263DAF282D420800A42E8A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5F263DA3282D014900A42E8A /* PhotoParticipants.swift */,
-				5F263DAB282D08D200A42E8A /* Photo.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		5F263DAF282D420800A42E8A /* AdditionalButtons */ = {
-			isa = PBXGroup;
-			children = (
+				5F263DA1282D010900A42E8A /* PhotoCollectionViewCell.swift */,
+				5F263DAD282D0E3500A42E8A /* PhotoParticipantsView.swift */,
 				5F263DB0282D421F00A42E8A /* AdditionalButtonsView.swift */,
+				5FD56CBE28254456008F1FCB /* CharityEventsDetailView.swift */,
 			);
-			path = AdditionalButtons;
+			path = View;
 			sourceTree = "<group>";
 		};
 		5F2F826227E305490067C0E5 = {
@@ -183,55 +165,211 @@
 		5F2F826D27E305490067C0E5 /* oneTask */ = {
 			isa = PBXGroup;
 			children = (
-				5FD56CB628251460008F1FCB /* JSON */,
+				5F4996BD28575F6C0069954D /* SupportingFiles */,
+				5F4996BE28575FA60069954D /* Application */,
+				5F4996D1285767F00069954D /* Pages */,
+			);
+			path = oneTask;
+			sourceTree = "<group>";
+		};
+		5F3CF7D42823F14C00E90DAE /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				5F6F58F42834EEBC00141327 /* Filter */,
+				5FD56CB928252D05008F1FCB /* Detail */,
+				5FB38390282E2C8F00FF3AF1 /* Model */,
+				5F4996CA285766580069954D /* Controllers */,
+				5F4996CB2857666F0069954D /* View */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		5F4996BD28575F6C0069954D /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				5F2F827727E3054B0067C0E5 /* Assets.xcassets */,
+				5F5AA1FC281FF3A700E851E4 /* Localizable.strings */,
+				5F2F827C27E3054B0067C0E5 /* Info.plist */,
 				5F6F58FD2835089600141327 /* Delegate */,
-				5F3CF7DD282402E300E90DAE /* Protocols */,
 				5F76BF53281824EA0009624B /* Extensions */,
 				5F76BF4128181FBA0009624B /* Fonts */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		5F4996BE28575FA60069954D /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				5F4996C228575FF30069954D /* Network */,
+				5F4996C028575FDB0069954D /* Controllers */,
+				5F4996C128575FE70069954D /* View */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		5F4996C028575FDB0069954D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5F2F826E27E305490067C0E5 /* AppDelegate.swift */,
+				5F76BF3F281810DC0009624B /* MainTabBarController.swift */,
+				5F2F827027E305490067C0E5 /* SceneDelegate.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5F4996C128575FE70069954D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5F2F827927E3054B0067C0E5 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5F4996C228575FF30069954D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5FD56CB628251460008F1FCB /* JSON */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5F4996C3285760300069954D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5F76BF512818244B0009624B /* NewsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5F4996C4285765D80069954D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5F76BF4F2818243D0009624B /* SearchViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5F4996C5285765E60069954D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5F76BF45281823590009624B /* HelpViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5F4996C6285765EE0069954D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5F76BF4D2818242E0009624B /* HistoryViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5F4996C7285765F70069954D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5F76BF4B281824200009624B /* ProfileViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5F4996C8285765FF0069954D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5F76BF5628182C970009624B /* HelpCollectionHeader.swift */,
+				5F76BF5828182F310009624B /* HelpCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5F4996C9285766240069954D /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				5F3CF7D42823F14C00E90DAE /* Events */,
+				5F263DA7282D07B700A42E8A /* Model */,
+				5F4996C5285765E60069954D /* Controllers */,
+				5F4996C8285765FF0069954D /* View */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		5F4996CA285766580069954D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5F3CF7D52823F19800E90DAE /* CharityEventsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5F4996CB2857666F0069954D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5F3CF7D72823F1C900E90DAE /* CharityEventsCollectionViewCell.swift */,
+				5F3CF7D92823F2BC00E90DAE /* CharityEventsHeaderView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5F4996CC285766CD0069954D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5F263DA3282D014900A42E8A /* PhotoParticipants.swift */,
+				5F263DAB282D08D200A42E8A /* Photo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5F4996CD2857670C0069954D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5FD56CBC2825391A008F1FCB /* CharityEventsDetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5F4996CE2857671E0069954D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5F6F58F52834EEE100141327 /* FilterTableViewCell.swift */,
+				5F6F58F92834F3FB00141327 /* FilterHeaderView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5F4996CF285767260069954D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5F6F58F72834EEF800141327 /* FilterViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5F4996D02857672F0069954D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5F6F58FB2834FBFE00141327 /* FilterModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5F4996D1285767F00069954D /* Pages */ = {
+			isa = PBXGroup;
+			children = (
 				5F76BF47281823D20009624B /* NewsPage */,
 				5F76BF48281823DA0009624B /* SearchPage */,
 				5F76BF44281823370009624B /* HelpPage */,
 				5F76BF49281823F50009624B /* HistoryPage */,
 				5F76BF4A281824130009624B /* ProfilePage */,
-				5F76BF3F281810DC0009624B /* MainTabBarController.swift */,
-				5F2F826E27E305490067C0E5 /* AppDelegate.swift */,
-				5F2F827027E305490067C0E5 /* SceneDelegate.swift */,
-				5F2F827727E3054B0067C0E5 /* Assets.xcassets */,
-				5F5AA1FC281FF3A700E851E4 /* Localizable.strings */,
-				5F2F827927E3054B0067C0E5 /* LaunchScreen.storyboard */,
-				5F2F827C27E3054B0067C0E5 /* Info.plist */,
 			);
-			path = oneTask;
-			sourceTree = "<group>";
-		};
-		5F3CF7D42823F14C00E90DAE /* CharityEvents */ = {
-			isa = PBXGroup;
-			children = (
-				5F6F58F42834EEBC00141327 /* Filter */,
-				5FB38390282E2C8F00FF3AF1 /* Model */,
-				5FD56CB928252D05008F1FCB /* Detail */,
-				5F3CF7D52823F19800E90DAE /* CharityEventsViewController.swift */,
-				5F3CF7D72823F1C900E90DAE /* CharityEventsCollectionViewCell.swift */,
-				5F3CF7D92823F2BC00E90DAE /* CharityEventsHeaderView.swift */,
-			);
-			path = CharityEvents;
-			sourceTree = "<group>";
-		};
-		5F3CF7DD282402E300E90DAE /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				5F3CF7DE282402F000E90DAE /* TapHelpCollectionViewCellDelegate.swift */,
-			);
-			path = Protocols;
+			path = Pages;
 			sourceTree = "<group>";
 		};
 		5F6F58F42834EEBC00141327 /* Filter */ = {
 			isa = PBXGroup;
 			children = (
-				5F6F58F52834EEE100141327 /* FilterTableViewCell.swift */,
-				5F6F58F72834EEF800141327 /* FilterViewController.swift */,
-				5F6F58F92834F3FB00141327 /* FilterHeaderView.swift */,
-				5F6F58FB2834FBFE00141327 /* FilterModel.swift */,
+				5F4996CE2857671E0069954D /* View */,
+				5F4996CF285767260069954D /* Controllers */,
+				5F4996D02857672F0069954D /* Model */,
 			);
 			path = Filter;
 			sourceTree = "<group>";
@@ -257,11 +395,7 @@
 		5F76BF44281823370009624B /* HelpPage */ = {
 			isa = PBXGroup;
 			children = (
-				5F263DA7282D07B700A42E8A /* Model */,
-				5F3CF7D42823F14C00E90DAE /* CharityEvents */,
-				5F76BF45281823590009624B /* HelpViewController.swift */,
-				5F76BF5628182C970009624B /* HelpCollectionHeader.swift */,
-				5F76BF5828182F310009624B /* HelpCollectionViewCell.swift */,
+				5F4996C9285766240069954D /* Categories */,
 			);
 			path = HelpPage;
 			sourceTree = "<group>";
@@ -269,7 +403,7 @@
 		5F76BF47281823D20009624B /* NewsPage */ = {
 			isa = PBXGroup;
 			children = (
-				5F76BF512818244B0009624B /* NewsViewController.swift */,
+				5F4996C3285760300069954D /* Controllers */,
 			);
 			path = NewsPage;
 			sourceTree = "<group>";
@@ -277,7 +411,7 @@
 		5F76BF48281823DA0009624B /* SearchPage */ = {
 			isa = PBXGroup;
 			children = (
-				5F76BF4F2818243D0009624B /* SearchViewController.swift */,
+				5F4996C4285765D80069954D /* Controllers */,
 			);
 			path = SearchPage;
 			sourceTree = "<group>";
@@ -285,7 +419,7 @@
 		5F76BF49281823F50009624B /* HistoryPage */ = {
 			isa = PBXGroup;
 			children = (
-				5F76BF4D2818242E0009624B /* HistoryViewController.swift */,
+				5F4996C6285765EE0069954D /* Controllers */,
 			);
 			path = HistoryPage;
 			sourceTree = "<group>";
@@ -293,7 +427,7 @@
 		5F76BF4A281824130009624B /* ProfilePage */ = {
 			isa = PBXGroup;
 			children = (
-				5F76BF4B281824200009624B /* ProfileViewController.swift */,
+				5F4996C7285765F70069954D /* Controllers */,
 			);
 			path = ProfilePage;
 			sourceTree = "<group>";
@@ -331,10 +465,9 @@
 		5FD56CB928252D05008F1FCB /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				5F263DAF282D420800A42E8A /* AdditionalButtons */,
-				5F263DA0282D00B800A42E8A /* PhotoParticipantsPreview */,
-				5FD56CBC2825391A008F1FCB /* CharityEventsDetailViewController.swift */,
-				5FD56CBE28254456008F1FCB /* CharityEventsDetailView.swift */,
+				5F4996CC285766CD0069954D /* Model */,
+				5F263DAF282D420800A42E8A /* View */,
+				5F4996CD2857670C0069954D /* Controllers */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -520,7 +653,6 @@
 				5FB38392282E2C9B00FF3AF1 /* CharityEvents.swift in Sources */,
 				5F76BF4E2818242E0009624B /* HistoryViewController.swift in Sources */,
 				5F3CF7D82823F1C900E90DAE /* CharityEventsCollectionViewCell.swift in Sources */,
-				5F3CF7DF282402F000E90DAE /* TapHelpCollectionViewCellDelegate.swift in Sources */,
 				5F76BF46281823590009624B /* HelpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -676,7 +808,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D43G9A8437;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = oneTask/Info.plist;
+				INFOPLIST_FILE = oneTask/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -705,7 +837,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D43G9A8437;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = oneTask/Info.plist;
+				INFOPLIST_FILE = oneTask/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

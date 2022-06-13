@@ -28,6 +28,7 @@
 
 "alertHeaderText" = "Ошибка загрузки данных";
 "alertOkText" = "Повторить";
+"alertCancelText" = "Отмена";
 
 "mailLabelText" = "У вас есть вопросы? Напишите нам";
 "mailLabelTextSecond" = "Напишите нам";

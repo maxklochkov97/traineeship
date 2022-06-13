@@ -7,9 +7,8 @@
 
 import UIKit
 
-class HelpViewController: UIViewController {
+final class HelpViewController: UIViewController {
 
-    private var dataManager = LocalDataManager()
     private var date: Categories?
     private var allCategories = [Category]()
     private let activityIndicator = UIActivityIndicatorView()
@@ -56,7 +55,7 @@ class HelpViewController: UIViewController {
     private func loadDateFromLocalJSON() {
         activityIndicator.startAnimating()
 
-        self.dataManager.fetchData(forPath: self.dataManager.pathCategory, to: &self.date) { [weak self] answer in
+        LocalDataManager.fetchData(forPath: LocalDataManager.pathCategory, to: date) { [weak self] answer in
             switch answer {
             case .success(let data):
                 guard let data = data else { return }
@@ -80,7 +79,8 @@ class HelpViewController: UIViewController {
             self.dismiss(animated: true)
             self.loadDateFromLocalJSON()
         }
-        alert.addAction(okAlert)
+        let cancelAlert = UIAlertAction(title: NSLocalizedString("alertCancelText", comment: ""), style: .destructive)
+        [cancelAlert, okAlert].forEach({ alert.addAction($0) })
         present(alert, animated: true)
     }
 

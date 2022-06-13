@@ -11,7 +11,6 @@ class CharityEventsViewController: UIViewController {
 
     private var filterSettings = FilterViewController()
     private var eventsModel = [CharityEvents]()
-    private var dataManager = LocalDataManager()
     private var date: Events?
     private var identifierCategory = ""
     private let activityIndicator = UIActivityIndicatorView()
@@ -68,7 +67,7 @@ class CharityEventsViewController: UIViewController {
     private func loadDateFromLocalJSON() {
         self.activityIndicator.startAnimating()
 
-        dataManager.fetchData(forPath: dataManager.pathEvents, to: &date) { [weak self] answer in
+        LocalDataManager.fetchData(forPath: LocalDataManager.pathEvents, to: date) { [weak self] answer in
             switch answer {
             case .success(let data):
                 guard let data = data else { return }
@@ -94,12 +93,13 @@ class CharityEventsViewController: UIViewController {
     }
 
     private func addAlert(error: String) {
-        let alert = UIAlertController(title: "Ошибка загрузки данных", message: error, preferredStyle: .alert)
-        let okAlert = UIAlertAction(title: "Повторить", style: .default) { _ in
+        let alert = UIAlertController(title: NSLocalizedString("alertHeaderText", comment: ""), message: error, preferredStyle: .alert)
+        let okAlert = UIAlertAction(title: NSLocalizedString("alertOkText", comment: ""), style: .default) { _ in
             self.dismiss(animated: true)
             self.loadDateFromLocalJSON()
         }
-        alert.addAction(okAlert)
+        let cancelAlert = UIAlertAction(title: NSLocalizedString("alertCancelText", comment: ""), style: .destructive)
+        [cancelAlert, okAlert].forEach({ alert.addAction($0) })
         present(alert, animated: true)
     }
     
@@ -215,10 +215,10 @@ extension CharityEventsViewController: FilterEventsModelDelegate {
         eventsModel = [CharityEvents]()
         charityEventsCollectionView.reloadData()
 
-        self.activityIndicator.startAnimating()
+        activityIndicator.startAnimating()
 
         DispatchQueue.global(qos: .background).async {
-            self.dataManager.fetchData(forPath: self.dataManager.pathEvents, to: &self.date) { [weak self] answer in
+            LocalDataManager.fetchData(forPath: LocalDataManager.pathEvents, to: self.date) { [weak self] answer in
                 switch answer {
                 case .success(let data):
                     guard let data = data else { return }
