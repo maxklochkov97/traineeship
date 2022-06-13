@@ -12,6 +12,7 @@ class HelpViewController: UIViewController {
     private var dataManager = LocalDataManager()
     private var date: Categories?
     private var allCategories = [Category]()
+    private let activityIndicator = UIActivityIndicatorView()
 
     private let layoutCol: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
@@ -47,23 +48,28 @@ class HelpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadDateFromLocalJSON()
         setupNavBar()
         layout()
+        loadDateFromLocalJSON()
     }
 
     private func loadDateFromLocalJSON() {
-        dataManager.fetchData(forPath: dataManager.pathCategory, to: &date) { [weak self] answer in
+        activityIndicator.startAnimating()
+
+        self.dataManager.fetchData(forPath: self.dataManager.pathCategory, to: &self.date) { [weak self] answer in
             switch answer {
             case .success(let data):
                 guard let data = data else { return }
-                self?.allCategories = data.categories
+                DispatchQueue.main.async {
+                    self?.activityIndicator.stopAnimating()
+                    self?.allCategories = data.categories
+                    self?.collectionView.reloadData()
+                }
             case.failure(let error):
-                self?.addAlert(error: error.localizedDescription)
-            }
-
-            DispatchQueue.main.async {
-                self?.collectionView.reloadData()
+                DispatchQueue.main.async {
+                    self?.activityIndicator.stopAnimating()
+                    self?.addAlert(error: error.localizedDescription)
+                }
             }
         }
     }
@@ -100,13 +106,11 @@ class HelpViewController: UIViewController {
 
     private func layout() {
         self.view.backgroundColor = .white
-
-        view.addSubview(collectionView)
+        activityIndicator.center = view.center
+        [collectionView, activityIndicator].forEach({ view.addSubview($0) })
 
         NSLayoutConstraint.activate([
-
             navBarTitleLabel.heightAnchor.constraint(equalToConstant: 25),
-
             collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),

@@ -56,10 +56,13 @@ class CharityEventsDetailViewController: UIViewController {
             switch answer {
             case .success(let data):
                 guard let data = data else { return }
-                self?.mainView.photoParticipantsView.configure(with: data.photos)
-
+                DispatchQueue.main.async {
+                    self?.mainView.photoParticipantsView.configure(with: data.photos)
+                }
             case.failure(let error):
-                self?.addAlert(error: error.localizedDescription)
+                DispatchQueue.main.async {
+                    self?.addAlert(error: error.localizedDescription)
+                }
             }
         }
     }

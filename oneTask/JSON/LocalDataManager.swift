@@ -13,17 +13,26 @@ class LocalDataManager {
     let pathPhotosParticipants = Bundle.main.path(forResource: "photosParticipants", ofType: "json")
 
     func fetchData<T: Codable>(forPath path: String?, to data: inout T, completion: @escaping (Result<T, Error>) -> Void) {
+        delay(1) {
+            DispatchQueue.global(qos: .background).async {
+                guard let path = path else { return }
+                let url = URL(fileURLWithPath: path)
 
-        guard let path = path else { return }
-        let url = URL(fileURLWithPath: path)
+                do {
+                    let jsonDate = try Data(contentsOf: url)
+                    let currentEvents = try JSONDecoder().decode(T.self, from: jsonDate)
+                    completion(.success(currentEvents))
+                } catch {
+                    print(error.localizedDescription)
+                    completion(.failure(error))
+                }
+            }
+        }
+    }
 
-        do {
-            let jsonDate = try Data(contentsOf: url)
-            let currentEvents = try JSONDecoder().decode(T.self, from: jsonDate)
-            completion(.success(currentEvents))
-        } catch {
-            print(error.localizedDescription)
-            completion(.failure(error))
+    private func delay(_ delay: Int, closure: @escaping () -> Void ) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(delay)) {
+            closure()
         }
     }
 }
